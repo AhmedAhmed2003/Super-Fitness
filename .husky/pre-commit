@@ -1,0 +1,6 @@
+echo "============================================================="
+echo "-- Please wait… Checking code quality before committing...."
+echo "============================================================="
+
+yarn exec prettier . --write
+yarn lint
