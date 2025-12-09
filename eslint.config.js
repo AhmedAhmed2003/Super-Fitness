@@ -15,7 +15,11 @@ export default defineConfig([
             globals: globals.browser,
         },
         rules: {
-            quotes: ["error", "double", { avoidEscape: true, allowTemplateLiterals: true }],
+            "indent": ["error", 4],
+            "semi": ["error", "always"],
+            "quotes": ["error", "double", { avoidEscape: true, allowTemplateLiterals: true }],
+            "no-var": "error",
+            "no-console": "error",
         },
     },
 ]);
