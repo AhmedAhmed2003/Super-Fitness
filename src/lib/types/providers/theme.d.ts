@@ -1,7 +1,6 @@
 import type { ReactNode } from "react";
 
-
-export type TThemeMode = "system" | "light" | "dark" 
+export type TThemeMode = "system" | "light" | "dark";
 
 /**
  * Props for the ThemeProvider component.

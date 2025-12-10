@@ -35,4 +35,3 @@ export function ThemeProvider({ children, defaultTheme = "system", storageKey = 
         </ThemeProviderContext.Provider>
     );
 }
-
