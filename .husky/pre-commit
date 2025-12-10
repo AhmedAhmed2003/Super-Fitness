@@ -5,5 +5,7 @@ echo "============================================================="
 echo "-- 1. run prettier"
 yarn exec prettier . --write
 
-echo "-- 1. check eslint rules...."
+echo ""
+echo ""
+echo "-- 2. check eslint rules...."
 yarn lint
