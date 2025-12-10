@@ -22,21 +22,21 @@
         "noUnusedLocals": true,
         "noUnusedParameters": true,
         "noFallthroughCasesInSwitch": true,
-        
+
         /* Alias paths */
         "baseUrl": ".",
         "paths": {
-          "@app/*": ["./src/app/*"],
-          "@components/*": ["./src/components/*"],
-          "@configuration/*": ["./src/configuration/*"],
-          "@fonts/*": ["./src/fonts/*"], 
-          "@i18n/*": ["./src/i18n/*"], 
-          "@lib/*": ["./src/lib/*"],
-          "@store/*": ["./src/store/*"],
-          "@styles/*": ["./src/styles/*"],
-          "@tests/*": ["./src/tests/*"],
-          "@public/*": ["./public/*"],
-          "@/*": ["./src/*"]
+            "@app/*": ["./src/app/*"],
+            "@components/*": ["./src/components/*"],
+            "@configuration/*": ["./src/configuration/*"],
+            "@fonts/*": ["./src/fonts/*"],
+            "@i18n/*": ["./src/i18n/*"],
+            "@lib/*": ["./src/lib/*"],
+            "@store/*": ["./src/store/*"],
+            "@styles/*": ["./src/styles/*"],
+            "@tests/*": ["./src/tests/*"],
+            "@public/*": ["./public/*"],
+            "@/*": ["./src/*"]
         }
     },
     "include": ["src"]

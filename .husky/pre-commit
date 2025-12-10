@@ -2,5 +2,8 @@ echo "============================================================="
 echo "-- Please wait… Checking code quality before committing...."
 echo "============================================================="
 
+echo "-- 1. run prettier"
 yarn exec prettier . --write
+
+echo "-- 1. check eslint rules...."
 yarn lint
