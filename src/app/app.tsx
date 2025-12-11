@@ -9,13 +9,25 @@ import { useTranslation } from "react-i18next";
  */
 export default function App() {
     const { t, i18n } = useTranslation();
+    const changeLanguageFn = (lang: "en" | "ar") => {
+        i18n.changeLanguage(lang);
+        localStorage.setItem("lang", lang);
+    };
+
     return (
         <Providers>
-            <div className="h-screen flex flex-col gap-10 items-center justify-center">
-                <p>{t("welcome")}</p>
-                <Button onClick={() => i18n.changeLanguage(i18n.language === "en" ? "ar" : "en")}>change language</Button>
-            </div>
-            <ButtonModeToggle />
+            <main>
+                <div className="h-screen flex flex-col gap-10 items-center justify-center text-main font-rubik">
+                    <p>{t("welcome")}</p>
+                    <Button
+                        className="text-main-text dark:text-main-text-dark"
+                        onClick={() => changeLanguageFn(i18n.language === "en" ? "ar" : "en")}
+                    >
+                        change language
+                    </Button>
+                </div>
+                <ButtonModeToggle />
+            </main>
         </Providers>
     );
 }
