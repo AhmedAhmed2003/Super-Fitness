@@ -1,4 +1,4 @@
-import type { TThemeMode } from "@lib/types/providers";
+import type { TThemeMode } from "@lib/types/components/providers";
 import { createContext } from "react";
 
 type ThemeProviderState = {
@@ -7,7 +7,7 @@ type ThemeProviderState = {
 };
 
 const initialState: ThemeProviderState = {
-    theme: "system",
+    theme: "light",
     setTheme: () => null,
 };
 
