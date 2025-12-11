@@ -3,6 +3,14 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import { useTheme } from "@lib/hooks/use-theme.hook";
 import { Moon, Sun } from "lucide-react";
 
+/**
+ * ButtonModeToggle component
+ *
+ * A dropdown button for toggling the application theme mode between light, dark, and system.
+ * Provides icon and accessible label for theme switching. Integrates with theme context.
+ *
+ * @returns {JSX.Element} A theme mode toggle dropdown button.
+ */
 export function ButtonModeToggle() {
     const { setTheme } = useTheme();
 
