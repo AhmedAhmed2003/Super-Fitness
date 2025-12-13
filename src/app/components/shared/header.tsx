@@ -1,7 +1,7 @@
 import { Button } from "@components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@components/ui/sheet";
 import { cn } from "@lib/utils/cn.util";
-import { BadgePlus, LogIn, Menu, User } from "lucide-react";
+import { BadgePlus, LogIn, User } from "lucide-react";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, NavLink } from "react-router-dom";
@@ -79,16 +79,10 @@ export default function Header() {
                     </>
                 ) : (
                     // Profile
-                    <Button
-                        className="relative  justify-center items-center dark:text-secondary-dark hidden md:flex"
-                        variant={"default"}
-                        size={"rounded-btn"}
-                        type="button"
-                    >
-                        <div className="bg-primary rounded-full w-9 h-9 border-2.5 border-white absolute flex justify-center items-center -right-7">
-                            <img src="images/Vector.svg" className="w-4 h-4" />
-                        </div>
-                        <Link to=""> {t("header.profile")}</Link>
+                    <Button size={"rounded-icon"} type="button">
+                        <Link to="/profile">
+                            <User className="size-8 text-secondary-dark" />
+                        </Link>
                     </Button>
                 )}
             </div>
@@ -124,8 +118,12 @@ export default function Header() {
                 {/* Menu in md */}
                 <Sheet>
                     <SheetTrigger asChild>
-                        <Button size={"rounded-icon"} className="p-2">
-                            <Menu className="text-secondary-dark" />
+                        <Button size={"rounded-icon"} className="p-2   ">
+                            <div className="flex flex-col  gap-1 items-end">
+                                <span className="block w-4 h-0.5 bg-white rounded-full  " />
+                                <span className="block w-3 h-0.5 bg-white rounded-full " />
+                                <span className="block w-2 h-0.5 bg-white rounded-full " />
+                            </div>
                         </Button>
                     </SheetTrigger>
 
