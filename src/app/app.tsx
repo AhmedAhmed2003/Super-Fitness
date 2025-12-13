@@ -1,3 +1,4 @@
+import Header from "./components/shared/header";
 import Providers from "@components/providers";
 import { ButtonModeToggle } from "@components/shared/button-mode-toggle.shared";
 import { Button } from "@components/ui/button";
@@ -16,7 +17,8 @@ export default function App() {
 
     return (
         <Providers>
-            <main>
+            <main className="px-4 md:px-20">
+                <Header />
                 <div className="h-screen flex flex-col gap-10 items-center justify-center text-main font-rubik">
                     <p>{t("welcome")}</p>
                     <Button

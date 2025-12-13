@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-@import "/fonts.css";
+/* @import "/fonts.css"; */
 
 @custom-variant dark (&:is(.dark *));
 
@@ -11,6 +11,8 @@
     --color-primary-hover: #ff5e00;
     --color--primary-error: #ff0000;
     --color-primary-disabled: #d3d3d3;
+    --border-width-1: 1px;
+    --border-width-2_5: 2.5px;
 
     --color-secondary: #242424;
     --color-secondary-dark: #f3f3f4;
@@ -23,9 +25,8 @@
     --color-card-foreground: var(--card-foreground);
     --color-popover: var(--popover);
     --color-popover-foreground: var(--popover-foreground);
-    --color-primary: #ff7d00;
+    --color-primary: #ff4100;
     --color-primary-foreground: var(--primary-foreground);
-    --color-secondary: var(--secondary);
     --color-secondary-foreground: var(--secondary-foreground);
     --color-muted: var(--muted);
     --color-muted-foreground: var(--muted-foreground);
@@ -90,6 +91,8 @@
 }
 
 .dark {
+    --color-secondary: #ffffff; /* White in dark mode */
+
     --background: oklch(0.145 0 0);
     --color-main: #f3f3f4;
     --foreground: oklch(0.985 0 0);
@@ -122,6 +125,7 @@
     --sidebar-accent-foreground: oklch(0.985 0 0);
     --sidebar-border: oklch(1 0 0 / 10%);
     --sidebar-ring: oklch(0.556 0 0);
+    --width-22: 88px;
 }
 
 @layer base {
@@ -131,4 +135,7 @@
     body {
         @apply bg-background text-foreground;
     }
+}
+nav a:hover {
+    @apply text-primary-hover;
 }
