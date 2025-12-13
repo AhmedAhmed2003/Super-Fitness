@@ -81,7 +81,7 @@ export default function Header() {
                     // Profile
                     <Button size={"rounded-icon"} type="button">
                         <Link to="/profile">
-                            <User className="size-8 text-secondary-dark" />
+                            <User className="size-5 text-secondary-dark" />
                         </Link>
                     </Button>
                 )}
@@ -128,7 +128,7 @@ export default function Header() {
                     </SheetTrigger>
 
                     <SheetContent side="left" className="w-80 h-72 py-6 px-4 dark:bg-secondary">
-                        <nav className="flex flex-col gap-4 font-bold text-lg text-secondary dark:text-secondary-dark">
+                        <nav className="flex flex-col gap-4 font-bold text-lg text-secondary dark:text-secondary-dark font-baloo">
                             {/* Logo */}
                             <div>
                                 <img src="images/logo.svg" className="w-20 h-14 md:w-22 md:h-14" />
