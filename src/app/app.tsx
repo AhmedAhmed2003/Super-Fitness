@@ -1,21 +1,22 @@
+import { routes } from "@/configurations/route.config";
 import Providers from "@components/providers";
-import { ButtonModeToggle } from "@components/shared/button-mode-toggle.shared";
-import { Button } from "@components/ui/button";
-import { useTranslation } from "react-i18next";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { RouterProvider } from "react-router-dom";
 
 /**
  * The root App component for the application.
  * @returns {JSX.Element} The rendered application container.
  */
 export default function App() {
-    const { t, i18n } = useTranslation();
+    const queryClient = new QueryClient();
     return (
         <Providers>
-            <div className="h-screen flex flex-col gap-10 items-center justify-center">
-                <p>{t("welcome")}</p>
-                <Button onClick={() => i18n.changeLanguage(i18n.language === "en" ? "ar" : "en")}>change language</Button>
-            </div>
-            <ButtonModeToggle />
+            <QueryClientProvider client={queryClient}>
+                <RouterProvider router={routes} />
+                {/* React Query Devtools */}
+                <ReactQueryDevtools initialIsOpen={false} />
+            </QueryClientProvider>
         </Providers>
     );
 }
