@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "./fonts.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -8,6 +9,16 @@
     --radius-sm: calc(var(--radius) - 4px);
     --radius-md: calc(var(--radius) - 2px);
     --radius-lg: var(--radius);
+    --color-primary-hover: #ff5e00;
+    --color--primary-error: #ff0000;
+    --color-primary-disabled: #d3d3d3;
+    --border-width-1: 1px;
+    --border-width-2_5: 2.5px;
+
+    --color-secondary: #242424;
+    --color-secondary-dark: #f3f3f4;
+    --color-white: #ffffff;
+
     --radius-xl: calc(var(--radius) + 4px);
     --color-background: var(--background);
     --color-foreground: var(--foreground);
@@ -15,9 +26,8 @@
     --color-card-foreground: var(--card-foreground);
     --color-popover: var(--popover);
     --color-popover-foreground: var(--popover-foreground);
-    --color-primary: var(--primary);
+    --color-primary: #ff4100;
     --color-primary-foreground: var(--primary-foreground);
-    --color-secondary: var(--secondary);
     --color-secondary-foreground: var(--secondary-foreground);
     --color-muted: var(--muted);
     --color-muted-foreground: var(--muted-foreground);
@@ -40,17 +50,21 @@
     --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
     --color-sidebar-border: var(--sidebar-border);
     --color-sidebar-ring: var(--sidebar-ring);
+    --font-baloo: "Baloo_Thambi_2", serif;
+    --font-inter: "Inter", serif;
+    --font-rubik: "Rubik", serif;
 }
 
 :root {
     --radius: 0.625rem;
+
     --background: oklch(1 0 0);
     --foreground: oklch(0.145 0 0);
     --card: oklch(1 0 0);
     --card-foreground: oklch(0.145 0 0);
     --popover: oklch(1 0 0);
     --popover-foreground: oklch(0.145 0 0);
-    --primary: oklch(0.205 0 0);
+    --primary: #ff4100;
     --primary-foreground: oklch(0.985 0 0);
     --secondary: oklch(0.97 0 0);
     --secondary-foreground: oklch(0.205 0 0);
@@ -78,7 +92,10 @@
 }
 
 .dark {
+    --color-secondary: #ffffff; /* White in dark mode */
+
     --background: oklch(0.145 0 0);
+    --color-main: #f3f3f4;
     --foreground: oklch(0.985 0 0);
     --card: oklch(0.205 0 0);
     --card-foreground: oklch(0.985 0 0);
@@ -109,6 +126,7 @@
     --sidebar-accent-foreground: oklch(0.985 0 0);
     --sidebar-border: oklch(1 0 0 / 10%);
     --sidebar-ring: oklch(0.556 0 0);
+    --width-22: 88px;
 }
 
 @layer base {
@@ -118,4 +136,10 @@
     body {
         @apply bg-background text-foreground;
     }
+}
+nav a:hover {
+    @apply text-primary-hover;
+}
+.active-link {
+    @apply text-primary;
 }

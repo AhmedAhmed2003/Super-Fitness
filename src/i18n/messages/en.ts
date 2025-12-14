@@ -1,6 +1,14 @@
 export const EN = {
     translation: {
         welcome: "Welcome Team 2! 😊",
-        // ... here write keys trans
+        header: {
+            home: "Home",
+            about: "About",
+            classes: "Classes",
+            healthy: "Healthy",
+            login: "LOGIN",
+            signup: "SIGN UP",
+            profile: "PROFILE",
+        },
     },
 };
