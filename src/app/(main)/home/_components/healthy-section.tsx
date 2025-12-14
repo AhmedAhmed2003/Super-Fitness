@@ -6,11 +6,13 @@ import { EmptyCardSkeleton } from "@components/skeletons/card.skeleton";
 import { useNavigate } from "react-router-dom";
 
 export default function HealthySection() {
+    // Fetch meal categories
     const { mealItems, isLoading, error } = useMealCategories();
+    // Navigation
     const navigate = useNavigate();
 
+    // Handle meal category click
     const handleMealClick = (item: CarouselItem) => {
-        console.log("Meal category clicked:", item);
         navigate(`/healthy/${item.id}`);
     };
 
@@ -27,8 +29,10 @@ export default function HealthySection() {
             "
         >
             <div className="relative w-full flex flex-col md:items-center">
+                {/* Logo Section */}
                 <LogoSection title="Healthy" subTitle="Healthy Nutritions" />
 
+                {/* Title */}
                 <h2 className="font-baloo w-[21.4rem] md:w-160 font-bold mt-4 md:mt-6 text-xl md:text-[2.5rem] dark:text-white leading-[120%] tracking-[0] uppercase md:text-center">
                     Fuel your fitness journey with customized{" "}
                     <span className="font-baloo font-bold text-xl md:text-[2.5rem] leading-[120%] tracking-[0] uppercase text-center text-[#FF4100]">
@@ -37,12 +41,14 @@ export default function HealthySection() {
                     designed for you
                 </h2>
 
+                {/* Error Message */}
                 {error && (
                     <div className="p-4 mt-6 mb-6 bg-red-500/10 border border-red-500 rounded-lg">
                         <p className="text-red-500">{error.message || "Failed to load meals"}</p>
                     </div>
                 )}
 
+                {/* Carousel */}
                 <div className="mt-12 w-full max-w-7xl">
                     {isLoading ? (
                         <EmptyCardSkeleton />

@@ -3,6 +3,7 @@ import type { MusclesResponse, MuscleGroupDetailsResponse, ApiError } from "@lib
 import { useQuery } from "@tanstack/react-query";
 
 export function useMuscleGroups() {
+    // Get muscle groups
     return useQuery<MusclesResponse, ApiError>({
         queryKey: ["muscleGroups"],
         queryFn: fetchMuscleGroups,
@@ -13,6 +14,7 @@ export function useMuscleGroups() {
 }
 
 export function useMuscleGroup(id: string) {
+    // Get muscle group details by id
     return useQuery<MuscleGroupDetailsResponse, ApiError>({
         queryKey: ["muscleGroup", id],
         queryFn: () => fetchMuscleGroupById(id),

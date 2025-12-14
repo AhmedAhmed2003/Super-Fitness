@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
 import { useState, useMemo, useCallback, memo } from "react";
 
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface CarouselItem {
     id: string;
     name: string;
@@ -10,6 +11,7 @@ export interface CarouselItem {
     description?: string;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface GenericCarouselProps {
     items: CarouselItem[];
     pageSize?: number;
@@ -17,6 +19,7 @@ interface GenericCarouselProps {
     onItemClick?: (item: CarouselItem) => void;
 }
 
+// memoize carousel card
 const CarouselCard = memo(
     ({ item, buttonText, onItemClick }: { item: CarouselItem; buttonText: string; onItemClick: (item: CarouselItem) => void }) => (
         <div className="card-wrapper">
@@ -46,6 +49,7 @@ const CarouselCard = memo(
 
 CarouselCard.displayName = "CarouselCard";
 
+// memoize pagination dots
 const PaginationDots = memo(
     ({ pagesCount, currentPage, onPageChange }: { pagesCount: number; currentPage: number; onPageChange: (page: number) => void }) => {
         if (pagesCount <= 1) return null;
@@ -69,6 +73,7 @@ const PaginationDots = memo(
 
 PaginationDots.displayName = "PaginationDots";
 
+// memoize generic carousel
 const GenericCarousel = memo(({ items, pageSize = 3, buttonText = "Explore", onItemClick }: GenericCarouselProps) => {
     const [page, setPage] = useState(0);
 
@@ -87,6 +92,7 @@ const GenericCarousel = memo(({ items, pageSize = 3, buttonText = "Explore", onI
         [onItemClick],
     );
 
+    // callback for pagination
     const handlePageChange = useCallback((newPage: number) => {
         setPage(newPage);
     }, []);

@@ -5,6 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useMemo } from "react";
 
 export function useMealCategories() {
+    // Get meal categories
     const { data, isLoading, error } = useQuery<MealCategoriesResponse, ApiError>({
         queryKey: ["mealCategories"],
         queryFn: fetchMealCategories,
@@ -13,6 +14,7 @@ export function useMealCategories() {
         retryDelay: (attemptIndex) => Math.min(1000 * 2 ** attemptIndex, 30000),
     });
 
+    // Transform data
     const mealItems: CarouselItem[] = useMemo(
         () =>
             data?.categories?.map((cat) => ({
@@ -24,6 +26,7 @@ export function useMealCategories() {
         [data],
     );
 
+    // Return
     return {
         mealItems,
         isLoading,

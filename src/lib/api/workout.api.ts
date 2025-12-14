@@ -1,6 +1,7 @@
 import type { ErrorResponse, MusclesResponse, MuscleGroupDetailsResponse, ApiError } from "@lib/types/workout.types";
 import axios, { type AxiosError } from "axios";
 
+// Constants
 const BASE_URL = "https://fitness.elevateegy.com/api/v1";
 
 // Create axios instance with default config
@@ -14,10 +15,11 @@ const apiClient = axios.create({
 
 // Centralized error handler
 function handleApiError(error: unknown, defaultMessage: string): never {
+    // Handle Axios error
     if (axios.isAxiosError(error)) {
         const axiosError = error as AxiosError<ErrorResponse>;
         const errData = axiosError.response?.data;
-
+        // Create API error
         const apiError: ApiError = {
             message: errData?.message || axiosError.message || defaultMessage,
             statusCode: axiosError.response?.status,
@@ -33,18 +35,22 @@ function handleApiError(error: unknown, defaultMessage: string): never {
 
 export async function fetchMuscleGroups(): Promise<MusclesResponse> {
     try {
+        // Fetch muscle groups
         const { data } = await apiClient.get<MusclesResponse>("/muscles");
         return data;
     } catch (error) {
+        // Handle error
         handleApiError(error, "Failed to fetch muscle groups");
     }
 }
 
 export async function fetchMuscleGroupById(id: string): Promise<MuscleGroupDetailsResponse> {
     try {
+        // Fetch muscle group
         const { data } = await apiClient.get<MuscleGroupDetailsResponse>(`/musclesGroup/${id}`);
         return data;
     } catch (error) {
+        // Handle error
         handleApiError(error, "Failed to fetch muscle group details");
     }
 }

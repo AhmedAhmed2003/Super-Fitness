@@ -1,13 +1,16 @@
 import type { ApiError, ErrorResponse, MealCategoriesResponse } from "@lib/types/healthy.types";
 import axios from "axios";
 
+// Constants
 const MEAL_BASE_URL = "https://www.themealdb.com/api/json/v1/1";
 
 export async function fetchMealCategories(): Promise<MealCategoriesResponse> {
     try {
+        // Fetch meal categories
         const { data } = await axios.get<MealCategoriesResponse>(`${MEAL_BASE_URL}/categories.php`);
         return data;
     } catch (error: unknown) {
+        // Handle error
         if (axios.isAxiosError(error)) {
             const errData: ErrorResponse | undefined = error.response?.data;
             const apiError: ApiError = {

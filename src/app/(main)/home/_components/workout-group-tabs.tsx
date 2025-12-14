@@ -3,12 +3,14 @@ import { Button } from "@components/ui/button";
 import type { MuscleGroup } from "@lib/types/workout.types";
 import { memo, useCallback } from "react";
 
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface MuscleGroupTabsProps {
     groups: MuscleGroup[];
     selected: string;
     onSelect: (id: string) => void;
 }
 
+// memoize muscle group tabs
 const MuscleGroupTabs = memo(({ groups, selected, onSelect }: MuscleGroupTabsProps) => {
     const getButtonClassName = useCallback(
         (groupId: string) =>
@@ -22,6 +24,7 @@ const MuscleGroupTabs = memo(({ groups, selected, onSelect }: MuscleGroupTabsPro
 
     return (
         <div className="w-full md:w-181 mx-auto my-4 md:my-8 px-4">
+            {/* Tabs */}
             <Carousel
                 opts={{
                     align: "start",
