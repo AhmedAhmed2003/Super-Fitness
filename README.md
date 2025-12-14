@@ -1,21 +1,78 @@
-# Super Fitness — Enhanced
+# React + TypeScript + Vite
 
-A modern fitness/healthy-lifestyle web application built with React, Vite and Tailwind CSS — based on the “Super Fitness (Enhanced)” design.  
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## 🚀 Overview  
-This project implements the design prototype from Figma (“Super Fitness — Enhanced”) as a responsive frontend application.  
-It aims to provide users with a smooth, mobile-first UI/UX for fitness-related content (exercises, plans, classes, etc.).  
+Currently, two official plugins are available:
 
-## 🎯 Features  
-- Responsive layout (mobile, tablet, desktop)  
-- Custom color palette and styling using Tailwind CSS (e.g. brand colors, special theme)  
-- Reusable React components (cards, buttons, navigation, forms, etc.)  
-- Clean folder structure (components, pages, assets, etc.)  
-- Easy customization and extension  
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or
+  [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+  for Fast Refresh
 
-## 💻 Tech Stack  
-- **Vite** — Fast build tool and dev server  
-- **React** — UI library  
-- **Tailwind CSS v4.x** — Utility-first CSS framework for styling  
-- (Optional) Any other libs you may add: react-router for routing, state-management, UI libraries, etc.  
+## React Compiler
 
+The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for
+tracking the progress.
+
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+
+```js
+export default defineConfig([
+    globalIgnores(["dist"]),
+    {
+        files: ["**/*.{ts,tsx}"],
+        extends: [
+            // Other configs...
+
+            // Remove tseslint.configs.recommended and replace with this
+            tseslint.configs.recommendedTypeChecked,
+            // Alternatively, use this for stricter rules
+            tseslint.configs.strictTypeChecked,
+            // Optionally, add this for stylistic rules
+            tseslint.configs.stylisticTypeChecked,
+
+            // Other configs...
+        ],
+        languageOptions: {
+            parserOptions: {
+                project: ["./tsconfig.node.json", "./tsconfig.app.json"],
+                tsconfigRootDir: import.meta.dirname,
+            },
+            // other options...
+        },
+    },
+]);
+```
+
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and
+[eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint
+rules:
+
+```js
+// eslint.config.js
+import reactDom from "eslint-plugin-react-dom";
+import reactX from "eslint-plugin-react-x";
+
+export default defineConfig([
+    globalIgnores(["dist"]),
+    {
+        files: ["**/*.{ts,tsx}"],
+        extends: [
+            // Other configs...
+            // Enable lint rules for React
+            reactX.configs["recommended-typescript"],
+            // Enable lint rules for React DOM
+            reactDom.configs.recommended,
+        ],
+        languageOptions: {
+            parserOptions: {
+                project: ["./tsconfig.node.json", "./tsconfig.app.json"],
+                tsconfigRootDir: import.meta.dirname,
+            },
+            // other options...
+        },
+    },
+]);
+```

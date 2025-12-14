@@ -1,5 +1,7 @@
 import { routes } from "@/configurations/route.config";
 import Providers from "@components/providers";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { RouterProvider } from "react-router-dom";
 
 /**
@@ -7,9 +9,14 @@ import { RouterProvider } from "react-router-dom";
  * @returns {JSX.Element} The rendered application container.
  */
 export default function App() {
+    const queryClient = new QueryClient();
     return (
         <Providers>
-            <RouterProvider router={routes} />
+            <QueryClientProvider client={queryClient}>
+                <RouterProvider router={routes} />
+                {/* React Query Devtools */}
+                <ReactQueryDevtools initialIsOpen={false} />
+            </QueryClientProvider>
         </Providers>
     );
 }
