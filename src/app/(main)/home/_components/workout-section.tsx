@@ -1,4 +1,4 @@
-import { useMuscleGroup, useMuscleGroups } from "../_hooks/useMuscleGroups";
+import { useMuscleGroup, useMuscleGroups } from "../_hooks/use-muscle-groups";
 import MuscleGroupTabs from "./workout-group-tabs";
 import type { CarouselItem } from "@app/(main)/home/_components/generic-carousel";
 import GenericCarousel from "@app/(main)/home/_components/generic-carousel";

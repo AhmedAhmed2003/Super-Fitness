@@ -1,4 +1,4 @@
-import { useMealCategories } from "../_hooks/useMealCategories";
+import { useMealCategories } from "../_hooks/use-meal-categories";
 import type { CarouselItem } from "@app/(main)/home/_components/generic-carousel";
 import GenericCarousel from "@app/(main)/home/_components/generic-carousel";
 import LogoSection from "@components/shared/logo-section";
