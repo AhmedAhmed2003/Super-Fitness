@@ -39,7 +39,8 @@ export const EN = {
             "title.start": "empowering you to achieve",
             "title.middle": "your fitness",
             "title.end": "goals",
-            "description": "We believe fitness is more than just a workout—it's a lifestyle. With top-of- the-line facilities, certified trainers, and a supportive community, we're here to inspire and guide you every step of the way.",
+            "description":
+                "We believe fitness is more than just a workout—it's a lifestyle. With top-of- the-line facilities, certified trainers, and a supportive community, we're here to inspire and guide you every step of the way.",
             "features.personal.title": "Personal Trainer",
             "features.personal.desc": "Achieve your fitness goals with the guidance of our certified trainers.",
             "features.cardio.title": "Cardio Programs",
@@ -48,8 +49,27 @@ export const EN = {
             "features.equipment.desc": "Our gym is equipped with the latest cardio & strength machines.",
             "features.nutrition.title": "Healthy Nutritions",
             "features.nutrition.desc": "Fuel your fitness journey with customized meal plans for you.",
-            "btn": "get started"
+            "btn": "get started",
         },
     },
-    "About-Page": "",
+
+    "Footer": {
+        "brandText": "Push harder, go further. Your fitness journey starts today!",
+        "contact": {
+            "phone": "+91 123 456 789",
+            "email": "info@gmail.com"
+        },
+        "timing": {
+            "monFri": "Mon - Fri : 08:00 AM - 10:00 PM",
+            "satSun": "Sat - Sun : 08:00 AM - 09:00 PM"
+        },
+        "location": {
+            "address": "2715 Ash Dr. San Jose, South Dakota 83475"
+        },
+        "titles": {
+            "contact": "Contact Us",
+            "timing": "Our Gym Timing",
+            "location": "Our Location",
+    },
+    }
 };

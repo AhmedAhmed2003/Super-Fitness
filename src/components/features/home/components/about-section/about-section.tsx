@@ -8,9 +8,9 @@ export default function AboutSection() {
     const { t } = useTranslation("Home-Page", { keyPrefix: "About-Section" });
 
     return (
-        <section id="about-section" className="py-20 bg-[#F9F9F9]">
+        <section id="about-section" className="py-20 bg-[#F9F9F9] dark:bg-[#242424F2]">
             <Container>
-                <div className="flex flex-col lg:flex-row items-start gap-16">
+                <div className="flex flex-col-reverse lg:flex-row items-start gap-16">
                     {/* Left Images */}
                     <div className="relative w-full lg:w-1/2">
                         {/* Large left image */}
@@ -23,7 +23,7 @@ export default function AboutSection() {
                             className="
                                 absolute 
                                 top-14 
-                                right-0 
+                                right-0 rtl:right-auto rtl:left-0 
                                 w-[40%] 
                                 rounded-2xl 
                                 shadow-xl
@@ -37,7 +37,7 @@ export default function AboutSection() {
                             className="
                                 absolute 
                                 top-1/2 
-                                right-0
+                                right-0 rtl:right-auto rtl:left-0
                                 w-[60%] 
                                 max-h-10/12
                                 rounded-2xl 
@@ -57,7 +57,7 @@ export default function AboutSection() {
                         </h2>
 
                         {/* Description */}
-                        <p className="mt-6 text-[#242424] font-normal text-lg">{t("description")}</p>
+                        <p className="mt-6 text-[#242424] font-normal text-lg dark:text-[#F3F3F4]">{t("description")}</p>
 
                         {/* Features */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-14 mb-8">
@@ -82,10 +82,10 @@ export default function AboutSection() {
                                 <div key={i} className="">
                                     <div className="flex gap-2 items-center">
                                         <ArrowIcon bgColor="none" color="#FF4100" strokeColor="none" />
-                                        <h4 className="font-bold text-[#242424] text-base">{item.title}</h4>
+                                        <h4 className="font-bold text-[#242424] dark:text-[#F3F3F4] text-base">{item.title}</h4>
                                     </div>
                                     <div>
-                                        <p className="text-[#242424] text-lg font-normal mt-1">{item.desc}</p>
+                                        <p className="text-[#242424] dark:text-[#F3F3F4] text-lg font-normal mt-1">{item.desc}</p>
                                     </div>
                                 </div>
                             ))}
