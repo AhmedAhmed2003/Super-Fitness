@@ -18,7 +18,7 @@ export default function Header() {
     const { theme } = useTheme();
 
     return (
-        <header className="w-full justify-between items-center flex rtl:flex-row-reverse px-4 md:px-20  pt-10 ">
+        <header className="w-full justify-between items-center flex rtl:flex-row-reverse px-4 md:px-20  py-10 fixed top-0 right-0 z-50 bg-white dark:bg-dark-bg">
             {/* Logo */}
 
             <div>
