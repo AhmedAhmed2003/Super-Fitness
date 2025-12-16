@@ -9,6 +9,7 @@ export const AR = {
             login: "تسجيل الدخول",
             signup: "إنشاء حساب",
             profile: "حسابك",
+            lang: "ع",
         },
     },
 };

@@ -9,6 +9,7 @@ export const EN = {
             login: "LOGIN",
             signup: "SIGN UP",
             profile: "PROFILE",
+            lang: "En",
         },
     },
 };
