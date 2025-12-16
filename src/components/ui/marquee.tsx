@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
-
 import { cn } from "@/lib/utils/cn.util";
 import type { HTMLAttributes } from "react";
 import type { MarqueeProps as FastMarqueeProps } from "react-fast-marquee";
@@ -15,7 +14,7 @@ export const Marquee = ({ className, ...props }: MarqueeProps) => (
 export type MarqueeContentProps = FastMarqueeProps;
 
 export const MarqueeContent = ({ loop = 0, autoFill = true, pauseOnHover = true, ...props }: MarqueeContentProps) => (
-    <FastMarquee autoFill={autoFill} loop={loop} pauseOnHover={pauseOnHover} {...(props as any)} />
+    <FastMarquee autoFill={autoFill} loop={loop} gradient={false} pauseOnHover={pauseOnHover} {...(props as any)} />
 );
 
 export type MarqueeFadeProps = HTMLAttributes<HTMLDivElement> & {
