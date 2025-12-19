@@ -1,0 +1,11 @@
+# echo "============================================================="
+# echo "-- Please wait… Checking code quality before committing...."
+# echo "============================================================="
+
+# echo "-- 1. run prettier"
+# yarn exec prettier . --write
+
+# echo ""
+# echo ""
+# echo "-- 2. check eslint rules...."
+# yarn lint
