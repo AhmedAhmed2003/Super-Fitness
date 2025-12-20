@@ -80,4 +80,14 @@ export const AR = {
             location: "موقعنا",
         },
     },
+    "forget-pss": {
+        successMessage: "تم إرسال رابط إعادة تعيين كلمة المرور إلى بريدك الإلكتروني.",
+        errorMessage: "حدث خطأ أثناء الإرسال.",
+        emailLabel: "أدخل بريدك الإلكتروني",
+        emailPlaceholder: "البريد الإلكتروني",
+        send: "إرسال",
+        sending: "جارٍ الإرسال...",
+        title: "نسيت كلمة المرور"
+}
+
 };

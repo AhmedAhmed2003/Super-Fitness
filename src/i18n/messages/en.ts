@@ -81,4 +81,13 @@ export const EN = {
             location: "Our Location",
         },
     },
+    "forget-pss": {
+        successMessage: "A password reset link has been sent to your email.",
+        errorMessage: "An error occurred while sending.",
+        emailLabel: "Enter Your Email",
+        emailPlaceholder: "Email",
+        send: "Send OTP",
+        sending: "Sending...",
+        title: "Forget Password"
+    },
 };

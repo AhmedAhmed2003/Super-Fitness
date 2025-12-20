@@ -1,3 +1,4 @@
+import { Toaster } from "sonner";
 import img from "../../../public/images/auth-bg-image.png";
 import authImg from "../../../public/images/auth-img.png";
 import fit from "../../../public/images/fit-img.png";
@@ -26,6 +27,7 @@ export default function AuthLayout() {
                 <div className="w-full md:w-1/2 flex items-center justify-center p-4">
                     <div className="w-full max-w-md">
                         <Outlet />
+                        <Toaster />
                     </div>
                 </div>
             </div>
