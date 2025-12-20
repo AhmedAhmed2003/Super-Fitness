@@ -1,4 +1,4 @@
-import AccountPage from "@app/(main)/Account/page";
+import AccountPage from "@app/(main)/profile/page";
 import AboutPage from "@app/(main)/about/page";
 import ClassesPage from "@app/(main)/classes/page";
 import HealthyPage from "@app/(main)/healthy/page";
@@ -42,7 +42,7 @@ export const routes = createBrowserRouter([
             { path: "home", element: <HomePage /> },
             { path: "about", element: <AboutPage /> },
             { path: "healthy", element: <HealthyPage /> },
-            { path: "account", element: <AccountPage /> },
+            { path: "profile", element: <AccountPage /> },
             { path: "classes", element: <ClassesPage /> },
         ],
     },

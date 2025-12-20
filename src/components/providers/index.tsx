@@ -6,7 +6,8 @@ export default function Providers({ children }: { children: React.ReactNode }) {
     return (
         <TanstackQuery>
             <TransProviders>
-                <ThemeProvider>{children}</ThemeProvider>
+                {/* <ThemeProvider>{children}</ThemeProvider> */}
+                {children}
             </TransProviders>
         </TanstackQuery>
     );
