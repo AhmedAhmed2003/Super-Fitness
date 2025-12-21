@@ -3,28 +3,47 @@ import { Sheet, SheetContent, SheetTrigger } from "@components/ui/sheet";
 import ThemeToggle from "@components/ui/theme-btn";
 import { useTheme } from "@lib/hooks/use-theme.hook";
 import { cn } from "@lib/utils/cn.util";
+import clsx from "clsx";
 import { BadgePlus, LogIn, User } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, NavLink } from "react-router-dom";
 
 export default function Header() {
     // Transaltion
-    const { t, i18n } = useTranslation();
+    const { t, i18n } = useTranslation("header");
 
     // Use state
-    const [isLogged, setIsLogged] = useState<boolean>(true);
+    const [isLogged] = useState<boolean>(true);
     // variable
     const { theme } = useTheme();
 
+    // Use state
+    const [scrolled, setScrolled] = useState(false);
+
+    // Use effect
+    useEffect(() => {
+        const onScroll = () => {
+            setScrolled(window.scrollY > 50);
+        };
+
+        window.addEventListener("scroll", onScroll);
+        return () => window.removeEventListener("scroll", onScroll);
+    }, []);
+
     return (
-        <header className="w-full justify-between items-center flex rtl:flex-row-reverse px-4 md:px-20  py-10 fixed top-0 right-0 z-50 bg-white dark:bg-dark-bg">
+        <header
+            className={clsx(
+                "w-full justify-between items-center flex rtl:flex-row-reverse px-4 md:px-20  pt-6 fixed top-0 right-0 z-50 ",
+                scrolled ? "bg-white dark:bg-dark-bg backdrop-blur shadow-lg transition" : "bg-transparent",
+            )}
+        >
             {/* Logo */}
 
             <div>
-                <img src="images/logo.svg" className={cn("w-16 h-10 md:w-22 md:h-14", theme == "dark" ? "inline" : "hidden")} />
+                <img src="/images/logo.svg" className={cn("w-16 h-10 md:w-22 md:h-14", theme == "dark" ? "inline" : "hidden")} />
 
-                <img src="images/logo-black.svg" className={cn("w-16 h-10 md:w-22 md:h-14", theme == "dark" ? "hidden" : "inline")} />
+                <img src="/images/logo-black.svg" className={cn("w-16 h-10 md:w-22 md:h-14", theme == "dark" ? "hidden" : "inline")} />
             </div>
 
             {/* Nav Bar md */}
@@ -34,29 +53,29 @@ export default function Header() {
             >
                 {/* Home */}
                 <NavLink to="/" className={({ isActive }) => cn(isActive && "active-link")}>
-                    {t("header.home")}
+                    {t("home")}
                 </NavLink>
 
                 {/* About */}
                 <NavLink to="/about" className={({ isActive }) => cn(isActive && "active-link")}>
-                    {t("header.about")}
+                    {t("about")}
                 </NavLink>
 
                 {/* Classes */}
                 <NavLink to="/classes" className={({ isActive }) => cn(isActive && "active-link")}>
-                    {t("header.classes")}
+                    {t("classes")}
                 </NavLink>
 
                 {/* Healthy */}
                 <NavLink to="/healthy" className={({ isActive }) => cn(isActive && "active-link")}>
-                    {t("header.healthy")}
+                    {t("healthy")}
                 </NavLink>
             </nav>
 
             <div className="  justify-center items-center gap-8 hidden md:flex md:rtl:flex-row-reverse ">
                 {/* Language button */}
                 <Button size={"rounded-icon"} type="button" onClick={() => i18n.changeLanguage(i18n.language === "ar" ? "en" : "ar")}>
-                    {t("header.lang")}
+                    {t("lang")}
                 </Button>
                 <ThemeToggle />
 
@@ -74,7 +93,7 @@ export default function Header() {
                             <div className="bg-primary rounded-full w-9 h-9 border-2.5 border-white absolute flex justify-center items-center -right-7">
                                 <img src="images/Vector.svg" className="w-4 h-4" />
                             </div>
-                            <Link to=""> {t("header.login")} </Link>
+                            <Link to=""> {t("login")} </Link>
                         </Button>
 
                         {/* Sign up */}
@@ -85,7 +104,7 @@ export default function Header() {
                             size={"rounded-btn"}
                             variant={"secondary"}
                         >
-                            <Link to=""> {t("header.signup")}</Link>
+                            <Link to=""> {t("signup")}</Link>
                             <div className="bg-primary rounded-full w-9 h-9 border-2.5 border-white absolute flex justify-center items-center -right-7">
                                 <img src="images/Vector.svg" className="w-4 h-4" />
                             </div>
@@ -152,22 +171,22 @@ export default function Header() {
 
                             {/* Home */}
                             <NavLink to="/" className={({ isActive }) => cn(isActive && "active-link")}>
-                                {t("header.home")}
+                                {t("home")}
                             </NavLink>
 
                             {/* About */}
                             <NavLink to="/about" className={({ isActive }) => cn(isActive && "active-link")}>
-                                {t("header.about")}
+                                {t("about")}
                             </NavLink>
 
                             {/* Classes */}
                             <NavLink to="/classes" className={({ isActive }) => cn(isActive && "active-link")}>
-                                {t("header.classes")}{" "}
+                                {t("classes")}{" "}
                             </NavLink>
 
                             {/* Healthy */}
                             <NavLink to="/healthy" className={({ isActive }) => cn(isActive && "active-link")}>
-                                {t("header.healthy")}
+                                {t("healthy")}
                             </NavLink>
                         </nav>
                     </SheetContent>
