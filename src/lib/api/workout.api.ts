@@ -2,11 +2,11 @@ import type { ErrorResponse, MusclesResponse, MuscleGroupDetailsResponse, ApiErr
 import axios, { type AxiosError } from "axios";
 
 // Constants
-const BASE_URL = "https://fitness.elevateegy.com/api/v1";
+const base = import.meta.env.VITE_BASE_URL;
 
 // Create axios instance with default config
 const apiClient = axios.create({
-    baseURL: BASE_URL,
+    baseURL: base,
     timeout: 10000, // 10 seconds timeout
     headers: {
         "Content-Type": "application/json",

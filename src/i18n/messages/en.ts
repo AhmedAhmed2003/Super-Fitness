@@ -61,6 +61,7 @@ export const EN = {
         login: "LOGIN",
         signup: "SIGN UP",
         profile: "PROFILE",
+        lang: "EN",
     },
     "Footer": {
         brandText: "Push harder, go further. Your fitness journey starts today!",
@@ -80,5 +81,15 @@ export const EN = {
             timing: "Our Gym Timing",
             location: "Our Location",
         },
+    },
+    "healthy-id": {
+        loading: "Loading...",
+        category: "Category",
+        area: "Area",
+        ingredients: "Ingredients",
+        beef: "beef",
+        chicken: "chicken",
+        seafood: "seafood",
+        loader: "loading",
     },
 };

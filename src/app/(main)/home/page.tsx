@@ -10,6 +10,7 @@ export default function HomePage() {
             <AboutSection />
             {/*Workout Section*/}
             <WorkoutSection />
+
             {/*Healthy Section*/}
             <HealthySection />
         </>

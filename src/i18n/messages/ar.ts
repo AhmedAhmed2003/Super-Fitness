@@ -60,6 +60,7 @@ export const AR = {
         login: "تسجيل الدخول",
         signup: "إنشاء حساب",
         profile: "حسابك",
+        lang: "AR",
     },
     "Footer": {
         brandText: "ادفع نفسك أكثر، وحقق المزيد. رحلتك في اللياقة البدنية تبدأ اليوم!",
@@ -79,5 +80,15 @@ export const AR = {
             timing: "مواعيد الجيم",
             location: "موقعنا",
         },
+    },
+    "healthy-id": {
+        loading: "جارٍ التحميل...",
+        category: "الفئة",
+        area: "المنطقة",
+        ingredients: "المكونات",
+        beef: "لحم",
+        chicken: "دجاج",
+        seafood: "المأكولات البحرية",
+        loader: "جاري التحميل",
     },
 };

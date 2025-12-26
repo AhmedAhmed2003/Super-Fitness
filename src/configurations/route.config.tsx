@@ -1,6 +1,8 @@
 import AccountPage from "@app/(main)/Account/page";
 import AboutPage from "@app/(main)/about/page";
 import ClassesPage from "@app/(main)/classes/page";
+import HealthyId from "@app/(main)/healthy/healthy-id/page";
+import HealthyLayout from "@app/(main)/healthy/layout";
 import HealthyPage from "@app/(main)/healthy/page";
 import HomePage from "@app/(main)/home/page";
 import MainLayout from "@app/(main)/layout";
@@ -41,7 +43,14 @@ export const routes = createBrowserRouter([
             { index: true, element: <HomePage /> },
             { path: "home", element: <HomePage /> },
             { path: "about", element: <AboutPage /> },
-            { path: "healthy", element: <HealthyPage /> },
+            {
+                path: "healthy",
+                element: <HealthyLayout />,
+                children: [
+                    { index: true, element: <HealthyPage /> },
+                    { path: ":id", element: <HealthyId /> },
+                ],
+            },
             { path: "account", element: <AccountPage /> },
             { path: "classes", element: <ClassesPage /> },
         ],

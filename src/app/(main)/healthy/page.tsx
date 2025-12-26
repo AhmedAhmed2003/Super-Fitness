@@ -1,6 +1,6 @@
 export default function HealthyPage() {
     return (
-        <div className="h-screen flex flex-col gap-10 items-center justify-center">
+        <div className="">
             <h1>Healthy Page</h1>
         </div>
     );

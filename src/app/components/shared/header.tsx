@@ -1,22 +1,49 @@
 import { Button } from "@components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@components/ui/sheet";
+import ThemeToggle from "@components/ui/theme-btn";
+import { useTheme } from "@lib/hooks/use-theme.hook";
 import { cn } from "@lib/utils/cn.util";
+import clsx from "clsx";
 import { BadgePlus, LogIn, User } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, NavLink } from "react-router-dom";
 
 export default function Header() {
     // Transaltion
-    const { t } = useTranslation("header");
+    const { t, i18n } = useTranslation("header");
 
     // Use state
-    const [isLogged, setIsLogged] = useState<boolean>(true);
+    const [isLogged] = useState<boolean>(true);
+    // variable
+    const { theme } = useTheme();
+
+    // Use state
+    const [scrolled, setScrolled] = useState(false);
+
+    // Use effect
+    useEffect(() => {
+        const onScroll = () => {
+            setScrolled(window.scrollY > 50);
+        };
+
+        window.addEventListener("scroll", onScroll);
+        return () => window.removeEventListener("scroll", onScroll);
+    }, []);
+
     return (
-        <header className="w-full justify-between items-center flex px-3 md:px-10  pt-10 ">
+        <header
+            className={clsx(
+                "w-full justify-between items-center flex rtl:flex-row-reverse px-4 md:px-20  pt-6 fixed top-0 right-0 z-50 ",
+                scrolled ? "bg-white dark:bg-dark-bg backdrop-blur shadow-lg transition" : "bg-transparent",
+            )}
+        >
             {/* Logo */}
+
             <div>
-                <img src="images/logo.svg" className="w-16 h-10 md:w-22 md:h-14" />
+                <img src="/images/logo.svg" className={cn("w-16 h-10 md:w-22 md:h-14", theme == "dark" ? "inline" : "hidden")} />
+
+                <img src="/images/logo-black.svg" className={cn("w-16 h-10 md:w-22 md:h-14", theme == "dark" ? "hidden" : "inline")} />
             </div>
 
             {/* Nav Bar md */}
@@ -45,8 +72,14 @@ export default function Header() {
                 </NavLink>
             </nav>
 
-            {/* Buttons in md */}
-            <div className="  justify-center items-center gap-8 hidden md:flex  ">
+            <div className="  justify-center items-center gap-8 hidden md:flex md:rtl:flex-row-reverse ">
+                {/* Language button */}
+                <Button size={"rounded-icon"} type="button" onClick={() => i18n.changeLanguage(i18n.language === "ar" ? "en" : "ar")}>
+                    {t("lang")}
+                </Button>
+                <ThemeToggle />
+
+                {/* Buttons in md */}
                 {/* Login btn */}
                 {!isLogged ? (
                     <>
@@ -79,11 +112,13 @@ export default function Header() {
                     </>
                 ) : (
                     // Profile
-                    <Button size={"rounded-icon"} type="button">
-                        <Link to="/profile">
-                            <User className="size-5 text-secondary-dark" />
-                        </Link>
-                    </Button>
+                    <>
+                        <Button size={"rounded-icon"} type="button">
+                            <Link to="/profile">
+                                <User className="size-5 text-secondary-dark" />
+                            </Link>
+                        </Button>
+                    </>
                 )}
             </div>
 
@@ -141,12 +176,12 @@ export default function Header() {
 
                             {/* About */}
                             <NavLink to="/about" className={({ isActive }) => cn(isActive && "active-link")}>
-                                {t("header.about")}
+                                {t("about")}
                             </NavLink>
 
                             {/* Classes */}
                             <NavLink to="/classes" className={({ isActive }) => cn(isActive && "active-link")}>
-                                {t("header.classes")}{" "}
+                                {t("classes")}{" "}
                             </NavLink>
 
                             {/* Healthy */}

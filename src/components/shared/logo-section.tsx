@@ -4,7 +4,7 @@ interface HeaderProps {
 }
 export default function LogoSection({ title, subTitle }: HeaderProps) {
     return (
-        <div className="relative w-fit z-50">
+        <div className="relative w-fit z-40">
             <h1
                 className="md:flex items-center font-baloo font-bold uppercase text-[64px] leading-[120%] tracking-[0%] text-transparent opacity-50 hidden"
                 style={{ WebkitTextStroke: "1px white" }}

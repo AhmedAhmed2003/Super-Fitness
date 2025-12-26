@@ -23,7 +23,6 @@ export default function HeroSection() {
             style={{ background: "url('/images/cover-hero-section.png') center/cover" }}
         >
             <Container>
-                <nav className="h-14 bg-blue-500"></nav> {/* here navbar ya ahmed */}
                 {/* Section content - display section content  */}
                 <section id="content" className="flex flex-col lg:flex-row items-center justify-between mt-24 gap-20">
                     {/* left side - info */}
@@ -31,7 +30,9 @@ export default function HeroSection() {
                         <h1 className="text-4xl/snug md:text-5xl/snug font-bold uppercase">
                             {t("title.start")} <span className="text-[#FF4100]">{t("title.middle")}</span> {t("title.end")}{" "}
                         </h1>
-                        <p className="mt-6 text-lg flex before:w-2 before:rounded-2xl before:me-4 before:bg-[#FF4100] before:content-[''] me-4">{t("description")}</p>
+                        <p className="mt-6 text-lg flex before:w-2 before:rounded-2xl before:me-4 before:bg-[#FF4100] before:content-[''] me-4">
+                            {t("description")}
+                        </p>
 
                         {/* Analysis section - display analysis section */}
                         <AnalysisSection />
