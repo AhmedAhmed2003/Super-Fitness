@@ -1,7 +1,7 @@
 import { UseMealByCategory, useSingleMeal } from "../hooks/use-healthy.hook";
 import PageLoader from "@components/shared/loader";
 import { Button } from "@components/ui/button";
-import { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, useNavigate, useParams, useSearchParams } from "react-router-dom";
 
@@ -35,15 +35,16 @@ export default function HealthyId() {
         }
     }, [mealData, mealLoading, navigate]);
 
-    // Update query param when category changes
     useEffect(() => {
-        setSearchParams({ category });
+        if (!mealLoading && !mealByCategoryLoading) {
+            if (!mealData?.meals || mealData.meals.length === 0 || String(mealData.meals) === "Invalid ID") {
+                return undefined;
+            }
+            if (!mealData?.meals || String(mealData?.meals) === "Invalid ID") {
+                return undefined;
+            }
+        }
     }, [category, setSearchParams]);
-
-    if (!mealData?.meals || String(mealData?.meals) === "Invalid ID") {
-        return null;
-    }
-
     return (
         <div className="pt-30 px-3 md:px-10 font-baloo pb-8">
             <div className="gap-8 flex flex-col-reverse md:flex-row justify-center">
@@ -67,7 +68,10 @@ export default function HealthyId() {
                         {/*  other Meals */}
                         <div className="flex md:flex-col gap-3">
                             {mealByCategoryLoading ? (
-                                <PageLoader />
+                                <div className="flex flex-col items-center gap-4 py-6">
+                                    <PageLoader />
+                                    <p className="text-sm text-muted">Loading meals...</p>
+                                </div>
                             ) : (
                                 mealByCategoryData?.meals?.map((meal) => (
                                     <Link
@@ -77,7 +81,12 @@ export default function HealthyId() {
                                     >
                                         {/* Meal img */}
                                         <div className="w-20 h-24">
-                                            <img src={meal.strMealThumb} alt={meal.strMeal} className="md:w-20 min-w-20 h-24 rounded-2xl" />
+                                            <img
+                                                src={meal.strMealThumb}
+                                                alt={meal.strMeal}
+                                                className="md:w-20 min-w-20 h-24 rounded-2xl"
+                                                loading="lazy"
+                                            />
                                         </div>
 
                                         {/* Meals detailes */}
@@ -97,7 +106,11 @@ export default function HealthyId() {
                 {/* Meal Details */}
                 <div className="flex-1 w-full">
                     {mealLoading ? (
-                        <PageLoader />
+                        <>
+                            {" "}
+                            <PageLoader />
+                            "asdasdasd"
+                        </>
                     ) : (
                         mealData.meals.map((item) => (
                             <div key={item.idMeal} className="flex gap-6 flex-col">
