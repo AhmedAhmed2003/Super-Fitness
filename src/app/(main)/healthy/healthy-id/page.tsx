@@ -1,7 +1,7 @@
 import { UseMealByCategory, useSingleMeal } from "../hooks/use-healthy.hook";
 import PageLoader from "@components/shared/loader";
 import { Button } from "@components/ui/button";
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, useNavigate, useParams, useSearchParams } from "react-router-dom";
 
@@ -112,7 +112,7 @@ export default function HealthyId() {
                             "asdasdasd"
                         </>
                     ) : (
-                        mealData.meals.map((item) => (
+                        mealData?.meals.map((item) => (
                             <div key={item.idMeal} className="flex gap-6 flex-col">
                                 {/* Meal Image and Info */}
                                 <div className="w-full relative">
