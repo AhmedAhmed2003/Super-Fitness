@@ -1,4 +1,11 @@
-import type { ApiError, ErrorResponse, MealByCategoryData, MealCategoriesResponse, MealsError, SingleMeal } from "@lib/types/healthy.types";
+import type {
+    ApiError,
+    ErrorResponse,
+    MealByCategoryData,
+    MealCategoriesResponse,
+    MealsError,
+    SingleMeal,
+} from "@lib/types/features/healthy.types";
 import axios from "axios";
 
 // Constants

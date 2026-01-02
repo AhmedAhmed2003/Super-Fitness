@@ -1,5 +1,5 @@
 import { fetchMuscleGroups, fetchMuscleGroupById } from "@lib/api/workout.api";
-import type { MusclesResponse, MuscleGroupDetailsResponse, ApiError } from "@lib/types/workout.types";
+import type { MusclesResponse, MuscleGroupDetailsResponse, ApiError } from "@lib/types/features/workout.types";
 import { useQuery } from "@tanstack/react-query";
 
 export function useMuscleGroups() {

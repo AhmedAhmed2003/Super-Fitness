@@ -92,4 +92,11 @@ export const EN = {
         seafood: "seafood",
         loader: "loading",
     },
+    "classes-page": {
+        title: "Transform Your Body with Our Dynamic",
+        subtitle: "Upcoming Workouts",
+        explore: "Explore",
+        workouts: "Workouts",
+        fitness: "Fitness Class",
+    },
 };

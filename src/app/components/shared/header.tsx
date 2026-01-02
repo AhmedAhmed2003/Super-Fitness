@@ -21,6 +21,12 @@ export default function Header() {
     // Use state
     const [scrolled, setScrolled] = useState(false);
 
+    // function
+    const handleTransaltion = () => {
+        i18n.changeLanguage(i18n.language === "ar" ? "en" : "ar");
+        localStorage.setItem("lang", i18n.language === "ar" ? "en" : "ar");
+    };
+
     // Use effect
     useEffect(() => {
         const onScroll = () => {
@@ -71,14 +77,12 @@ export default function Header() {
                     {t("healthy")}
                 </NavLink>
             </nav>
-
             <div className="  justify-center items-center gap-8 hidden md:flex md:rtl:flex-row-reverse ">
                 {/* Language button */}
-                <Button size={"rounded-icon"} type="button" onClick={() => i18n.changeLanguage(i18n.language === "ar" ? "en" : "ar")}>
+                <Button size={"rounded-icon"} type="button" onClick={() => handleTransaltion()}>
                     {t("lang")}
                 </Button>
                 <ThemeToggle />
-
                 {/* Buttons in md */}
                 {/* Login btn */}
                 {!isLogged ? (
@@ -121,9 +125,8 @@ export default function Header() {
                     </>
                 )}
             </div>
-
             {/* Buttons in sm */}
-            <div className=" gap-4 justify-between items-center flex md:hidden ">
+            <div className=" gap-4 justify-between items-center flex md:hidden rtl:flex-row-reverse ">
                 {/* Check if the user logged */}
                 {!isLogged ? (
                     <>
@@ -149,6 +152,10 @@ export default function Header() {
                         </Link>
                     </Button>
                 )}
+                <Button size={"rounded-icon"} type="button" onClick={() => handleTransaltion()}>
+                    {t("lang")}
+                </Button>
+                <ThemeToggle />
 
                 {/* Menu in md */}
                 <Sheet>

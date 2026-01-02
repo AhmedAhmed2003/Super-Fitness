@@ -91,4 +91,11 @@ export const AR = {
         seafood: "المأكولات البحرية",
         loader: "جاري التحميل",
     },
+    "classes-page": {
+        title: "غيّر جسمك مع تماريننا",
+        subtitle: "الديناميكية القادمة",
+        explore: "استكشف",
+        workouts: "تمارين",
+        fitness: "درس لياقة بدنية",
+    },
 };

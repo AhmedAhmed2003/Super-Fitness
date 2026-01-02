@@ -1,5 +1,5 @@
-import PageLoader from "@components/shared/loader";
 import { UseMealByCategory, useSingleMeal } from "../hooks/use-healthy.hook";
+import PageLoader from "@components/shared/loader";
 import { Button } from "@components/ui/button";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";

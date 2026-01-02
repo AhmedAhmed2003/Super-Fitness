@@ -37,9 +37,9 @@ const CarouselCard = memo(
                         className="flex items-center justify-between text-[#FF4100] font-baloo font-medium text-[20px] leading-[18px] capitalize p-0 hover:bg-transparent cursor-pointer"
                     >
                         <span>{buttonText}</span>
-                        <div className="ml-2 w-6 h-6 rounded-[63px] flex items-center justify-center bg-[#FF4100] transform -rotate-45 p-2 opacity-100">
-                            <ArrowRight className="w-[8.64px] h-[6.39px] text-[#242424]" />
-                        </div>
+                        <button className="ml-2 rounded-[63px] flex items-center justify-center bg-[#FF4100] transform -rotate-45 p-2 opacity-100">
+                            <ArrowRight className="size-4 text-[#242424] text-5xl" size={50} />
+                        </button>
                     </Button>
                 </CardContent>
             </Card>

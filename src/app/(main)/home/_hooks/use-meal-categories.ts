@@ -1,6 +1,6 @@
 import type { CarouselItem } from "@app/(main)/home/_components/generic-carousel";
 import { fetchMealCategories } from "@lib/api/healthy.api";
-import type { ApiError, MealCategoriesResponse } from "@lib/types/healthy.types";
+import type { ApiError, MealCategoriesResponse } from "@lib/types/features/healthy.types";
 import { useQuery } from "@tanstack/react-query";
 import { useMemo } from "react";
 
