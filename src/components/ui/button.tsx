@@ -60,7 +60,7 @@ function Button({
                     className={cn(
                         i18n.language === "ar" && "-scale-x-100",
                         i18n.language === "en" ? "translate-x-1/2" : "-translate-x-1/2",
-                        "absolute top-1/2 -translate-y-1/2 end-0 size-[50px]",
+                        "absolute top-1/2 -translate-y-1/2 end-0 size-12.5",
                     )}
                 />
             )}

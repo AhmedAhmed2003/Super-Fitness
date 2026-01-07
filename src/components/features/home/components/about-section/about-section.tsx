@@ -82,10 +82,10 @@ export default function AboutSection() {
                                 <div key={i} className="">
                                     <div className="flex gap-2 items-center">
                                         <ArrowIcon bgColor="none" color="#FF4100" strokeColor="none" />
-                                        <h4 className="font-bold text-[#242424] dark:text-[#F3F3F4] text-base">{item.title}</h4>
+                                        <h4 className="font-bold text-secondary dark:text-[#F3F3F4] text-base">{item.title}</h4>
                                     </div>
                                     <div>
-                                        <p className="text-[#242424] dark:text-[#F3F3F4] text-lg font-normal mt-1">{item.desc}</p>
+                                        <p className="text-secondary dark:text-[#F3F3F4] text-lg font-normal mt-1">{item.desc}</p>
                                     </div>
                                 </div>
                             ))}
