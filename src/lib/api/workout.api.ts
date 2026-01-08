@@ -1,4 +1,4 @@
-import type { ErrorResponse, MusclesResponse, MuscleGroupDetailsResponse, ApiError } from "@lib/types/workout.types";
+import type { ErrorResponse, MusclesResponse, MuscleGroupDetailsResponse, ApiError } from "@lib/types/features/workout.types";
 import axios, { type AxiosError } from "axios";
 
 // Constants

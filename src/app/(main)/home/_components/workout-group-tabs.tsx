@@ -1,6 +1,6 @@
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { Button } from "@components/ui/button";
-import type { MuscleGroup } from "@lib/types/workout.types";
+import type { MuscleGroup } from "@lib/types/features/workout.types";
 import { memo, useCallback } from "react";
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface

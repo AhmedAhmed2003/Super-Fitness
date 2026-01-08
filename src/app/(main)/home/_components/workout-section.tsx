@@ -4,7 +4,7 @@ import type { CarouselItem } from "@app/(main)/home/_components/generic-carousel
 import GenericCarousel from "@app/(main)/home/_components/generic-carousel";
 import LogoSection from "@components/shared/logo-section";
 import { EmptyCardSkeleton } from "@components/skeletons/card.skeleton";
-import type { MusclesResponse, MuscleGroupDetailsResponse } from "@lib/types/workout.types";
+import type { MusclesResponse, MuscleGroupDetailsResponse } from "@lib/types/features/workout.types";
 import { useState, useEffect, useMemo, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 

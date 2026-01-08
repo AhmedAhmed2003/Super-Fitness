@@ -18,6 +18,7 @@ const buttonVariants = cva(
                 secondary: "border border-[#FF4100] bg-[#FF4100] text-md font-semibold text-white relative",
                 secondary_outline: "border border-[#FF4100] text-md font-semibold text-[#FF4100] relative",
                 ghost: "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
+                ghost_secondary: "",
                 link: "text-primary underline-offset-4 hover:underline",
             },
             size: {
@@ -28,7 +29,7 @@ const buttonVariants = cva(
                 "rounded-icon": "size-12 rounded-full dark:text-white",
                 "icon-sm": "size-8",
                 "icon-lg": "size-10",
-                "rounded-btn": "w-22  rounded-4xl h-10",
+                "rounded-btn": "w-24 sm:w-32 md:w-36  rounded-4xl h-10 px-4",
             },
         },
         defaultVariants: {

@@ -9,11 +9,11 @@ export interface MealCategoriesResponse {
     categories: MealCategory[];
 }
 
-export interface ErrorResponse {
+declare interface ErrorResponse {
     message?: string;
 }
 
-export interface ApiError {
+declare interface ApiError {
     message: string;
     statusCode?: number;
     data?: ErrorResponse | MealsError;

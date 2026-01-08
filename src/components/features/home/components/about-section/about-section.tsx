@@ -43,11 +43,11 @@ export default function AboutSection() {
                             alt="training"
                             className="
                                 absolute 
-                                top-1/2 
+                                top-1/2
                                 right-0 rtl:right-auto rtl:left-0
-                                w-[60%] 
+                                w-[60%]
                                 max-h-10/12
-                                rounded-2xl 
+                                rounded-2xl
                                 shadow-xl
                             "
                         />
@@ -68,7 +68,7 @@ export default function AboutSection() {
                         </h2>
 
                         {/* Description */}
-                        <p className="mt-6 text-[#242424] font-normal text-lg dark:text-[#F3F3F4]">{t("description")}</p>
+                        <p className="mt-6 text-secondary font-normal text-lg dark:text-[#F3F3F4]">{t("description")}</p>
 
                         {/* Features */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-14 mb-8">

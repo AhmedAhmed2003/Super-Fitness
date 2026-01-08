@@ -27,8 +27,7 @@ export default function HealthySection() {
                 before:content-[''] before:absolute before:top-5 md:before:top-[3.56rem]
                 before:w-full before:h-103.5 before:bg-[#F3F3F4]/60
                 dark:before:bg-[#242424]/60 before:backdrop-blur-md
-                before:z-0 pb-10 px-4 pt-6 md:pt-1
-            "
+                before:z-0 pb-10 px-4 pt-6 md:pt-1"
         >
             <div className="relative w-full flex flex-col md:items-center">
                 {/* Logo Section */}

@@ -108,6 +108,13 @@ export const AR = {
         msg2: "هل يمكنك من فضلك أن تخبرني كيف أزيد وزني 20 كيلوجرامًا؟",
         workoutAtHome: "تمرين في المنزل",
         dietPlan: "نظام غذائي",
-        twentyMinutesWorkout: "تمرين لمدة 20 دقيقة",
+        twentyMinutesWorkout: "تمرين لمدة 20 دقيقة"
+    },
+    "classes-page": {
+        title: "غيّر جسمك مع تماريننا",
+        subtitle: "الديناميكية القادمة",
+        explore: "استكشف",
+        workouts: "تمارين",
+        fitness: "درس لياقة بدنية",
     },
 };

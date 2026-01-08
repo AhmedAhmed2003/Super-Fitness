@@ -111,5 +111,12 @@ export const EN = {
         workoutAtHome: "workout at home",
         dietPlan: "Diet Plan",
         twentyMinutesWorkout: "20 minutes workout"
-    }
+    },
+    "classes-page": {
+        title: "Transform Your Body with Our Dynamic",
+        subtitle: "Upcoming Workouts",
+        explore: "Explore",
+        workouts: "Workouts",
+        fitness: "Fitness Class",
+    },
 };

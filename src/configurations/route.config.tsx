@@ -1,5 +1,7 @@
 import AccountPage from "@app/(main)/Account/page";
 import AboutPage from "@app/(main)/about/page";
+import ClassesId from "@app/(main)/classes/[classes-id]/page";
+import ClassesLayout from "@app/(main)/classes/layout";
 import ClassesPage from "@app/(main)/classes/page";
 import HealthyId from "@app/(main)/healthy/healthy-id/page";
 import HealthyLayout from "@app/(main)/healthy/layout";
@@ -49,6 +51,14 @@ export const routes = createBrowserRouter([
                 children: [
                     { index: true, element: <HealthyPage /> },
                     { path: ":id", element: <HealthyId /> },
+                ],
+            },
+            {
+                path: "classes",
+                element: <ClassesLayout />,
+                children: [
+                    { index: true, element: <ClassesPage /> },
+                    { path: ":classes-id", element: <ClassesId /> },
                 ],
             },
             { path: "account", element: <AccountPage /> },

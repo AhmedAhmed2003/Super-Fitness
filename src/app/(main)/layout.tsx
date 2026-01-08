@@ -6,7 +6,7 @@ import { Outlet } from "react-router-dom";
 
 export default function MainLayout() {
     return (
-        <main className="min-h-screen">
+        <main className="min-h-screen font-baloo">
             <Header />
             <Outlet />
       <ChatWidget />

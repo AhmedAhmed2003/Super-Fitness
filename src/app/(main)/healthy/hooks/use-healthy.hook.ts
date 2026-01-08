@@ -1,5 +1,5 @@
 import { fetchMealByCategory, fetchSingleMeal } from "@lib/api/healthy.api";
-import type { ApiError, MealByCategoryData, SingleMeal } from "@lib/types/healthy.types";
+import type { ApiError, MealByCategoryData, SingleMeal } from "@lib/types/features/healthy.types";
 import { useQuery } from "@tanstack/react-query";
 
 export function useSingleMeal({ id }: { id: string }) {
