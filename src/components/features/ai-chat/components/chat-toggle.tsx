@@ -1,31 +1,32 @@
-import { motion } from "framer-motion";
-import { MessageCircle, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { FloatingCloseButton } from "./close-btn";
 import { useChat } from "@lib/context/ai.context";
+import { motion, AnimatePresence } from "framer-motion";
 
 export function ChatToggleButton() {
-  const { isOpen, toggleChat } = useChat();
+    const { isOpen, toggleChat } = useChat();
 
-  return (
-    <motion.div
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.9 }}
-      className="fixed bottom-5 right-5 z-50"
-    >
-      <Button
-        onClick={toggleChat}
-        className="h-12 w-12 p-0 rounded-full shadow-lg"
-      >
-        <motion.span
-          key={isOpen ? "close" : "open"}
-          initial={{ rotate: -90, opacity: 0 }}
-          animate={{ rotate: 0, opacity: 1 }}
-          exit={{ rotate: 90, opacity: 0 }}
-          transition={{ duration: 0.2 }}
+    return (
+        <motion.div
+            className="fixed bottom-5 right-20 z-50"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
         >
-          {isOpen ? <X /> : <MessageCircle />}
-        </motion.span>
-      </Button>
-    </motion.div>
-  );
+            <AnimatePresence>
+                {!isOpen && (
+                    <motion.span
+                        key="chat-toggle"
+                        initial={{ rotate: -90, opacity: 0, scale: 0.8 }}
+                        animate={{ rotate: 0, opacity: 1, scale: 1 }}
+                        exit={{ rotate: 90, opacity: 0, scale: 0.8 }}
+                        transition={{ duration: 0.25, ease: "easeOut" }}
+                    >
+                        <FloatingCloseButton
+                            label="Hey Ask Me"
+                            onClose={toggleChat}
+                        />
+                    </motion.span>
+                )}
+            </AnimatePresence>
+        </motion.div>
+    );
 }

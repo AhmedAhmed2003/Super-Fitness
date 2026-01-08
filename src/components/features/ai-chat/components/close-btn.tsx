@@ -24,7 +24,7 @@ export function FloatingCloseButton({
                 <img src={imageSrc} alt="Close" className="w-28" />
             </motion.button>
 
-            <Button variant="default" size="sm" className="text-lg capitalize font-bold font-baloo rounded-3xl" onClick={onClose}>
+            <Button variant="default" size="sm" className="text-lg capitalize font-bold font-baloo rounded-3xl " onClick={onClose}>
                 {label}
             </Button>
         </motion.div>
