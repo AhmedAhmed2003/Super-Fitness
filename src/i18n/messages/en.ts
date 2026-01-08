@@ -101,4 +101,15 @@ export const EN = {
         sending: "Sending...",
         title: "Forget Password"
     },
+    "ai": 
+    {
+        name: "Smart Coach",
+        place: "Ask Me Any Things..",
+        hey: "Hey Ask Me",
+        msg1: "Hello How Can I Assist You Today?",
+        msg2: "Can you please tell me how to gain 20kg weight?",
+        workoutAtHome: "workout at home",
+        dietPlan: "Diet Plan",
+        twentyMinutesWorkout: "20 minutes workout"
+    }
 };

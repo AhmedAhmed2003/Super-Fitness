@@ -1,8 +1,10 @@
 import { FloatingCloseButton } from "./close-btn";
 import { useChat } from "@lib/context/ai.context";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 export function ChatToggleButton() {
+    const { t } = useTranslation("ai");
     const { isOpen, toggleChat } = useChat();
 
     return (
@@ -21,7 +23,7 @@ export function ChatToggleButton() {
                         transition={{ duration: 0.25, ease: "easeOut" }}
                     >
                         <FloatingCloseButton
-                            label="Hey Ask Me"
+                            label={t("hey")}
                             onClose={toggleChat}
                         />
                     </motion.span>
