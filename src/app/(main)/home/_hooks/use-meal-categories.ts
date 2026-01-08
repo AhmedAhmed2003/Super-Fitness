@@ -1,6 +1,6 @@
 import type { CarouselItem } from "@app/(main)/home/_components/generic-carousel";
-import { fetchMealCategories } from "@lib/api/healthy.api";
-import type { ApiError, MealCategoriesResponse } from "@lib/types/healthy.types";
+import { fetchMealByCategory, fetchMealCategories } from "@lib/api/healthy.api";
+import type { ApiError, MealByCategoryData, MealCategoriesResponse } from "@lib/types/healthy.types";
 import { useQuery } from "@tanstack/react-query";
 import { useMemo } from "react";
 
@@ -18,7 +18,7 @@ export function useMealCategories() {
     const mealItems: CarouselItem[] = useMemo(
         () =>
             data?.categories?.map((cat) => ({
-                id: cat.idCategory,
+                id: cat.strCategory,
                 name: cat.strCategory,
                 image: cat.strCategoryThumb,
                 description: cat.strCategoryDescription,
@@ -29,6 +29,28 @@ export function useMealCategories() {
     // Return
     return {
         mealItems,
+        isLoading,
+        error: error as ApiError | null,
+    };
+}
+
+export function useMealsByCategory(category?: string) {
+    const {
+        data,
+        isLoading,
+        error,
+    } =  useQuery<MealByCategoryData, ApiError>({
+        queryKey: ["mealsByCategory", category],
+        queryFn: () =>
+            fetchMealByCategory({
+                category: category!,
+            }),
+        enabled: !!category,
+        retry: 2,
+    });
+
+    return {
+        meals: data?.meals ?? [],
         isLoading,
         error: error as ApiError | null,
     };

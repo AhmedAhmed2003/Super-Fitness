@@ -13,7 +13,9 @@ export default function HealthySection() {
 
     // Handle meal category click
     const handleMealClick = (item: CarouselItem) => {
-        navigate(`/healthy/${item.id}`);
+        navigate(`/healthy?category=${item.id}`);
+        console.log(item.id);
+        
     };
 
     return (
