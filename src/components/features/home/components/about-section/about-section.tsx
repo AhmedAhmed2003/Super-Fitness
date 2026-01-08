@@ -1,11 +1,18 @@
 import Container from "@components/layouts/container.layout";
+import LogoSection from "@components/shared/logo-section";
 import { Button } from "@components/ui/button";
 // import { cn } from "@lib/utils/cn.util";
 import ArrowIcon from "@public/vectors/arrow";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 export default function AboutSection() {
     const { t } = useTranslation("Home-Page", { keyPrefix: "About-Section" });
+        const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate("/healthy");
+    };
 
     return (
         <section id="about-section" className="py-20 bg-[#F9F9F9] dark:bg-[#242424F2]">
@@ -48,12 +55,16 @@ export default function AboutSection() {
 
                     {/* Right Content */}
                     <div className="w-full lg:w-1/2">
-                        {/* Subtitle */}
-                        <p className="text-[#FF4100] font-semibold capitalize tracking-wide mb-3">{t("subtitle")}</p>
+                        {/* Logo Section */}
+                        <LogoSection title={t("subtitle")} subTitle={t("subtitle")} />
 
                         {/* Title */}
-                        <h2 className="text-3xl md:text-4xl font-bold uppercase leading-tight">
-                            {t("title.start")} <span className="text-[#FF4100]">{t("title.middle")}</span> {t("title.end")}
+                        <h2 className="font-baloo w-[21.4rem] md:w-160 font-bold mt-4 md:mt-6 text-xl md:text-[2.5rem] dark:text-white leading-[120%] tracking-[0] uppercase">
+                            {t("title.start")}{" "}
+                            <span className="font-baloo font-bold text-xl md:text-[2.5rem] leading-[120%] tracking-[0] uppercase text-[#FF4100]">
+                                {t("title.middle")}
+                            </span>{" "}
+                            {t("title.end")}
                         </h2>
 
                         {/* Description */}
@@ -92,7 +103,7 @@ export default function AboutSection() {
                         </div>
 
                         {/* Button */}
-                        <Button variant="secondary" className="capitalize w-full lg:w-fit">
+                        <Button variant="secondary" className="capitalize w-full lg:w-fit"  onClick={handleClick}>
                             {t("btn")}
                         </Button>
                     </div>

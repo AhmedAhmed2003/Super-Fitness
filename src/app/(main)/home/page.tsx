@@ -7,10 +7,10 @@ export default function HomePage() {
     return (
         <>
             <HeroSection />
+             {/*About Section*/}
             <AboutSection />
             {/*Workout Section*/}
             <WorkoutSection />
-
             {/*Healthy Section*/}
             <HealthySection />
         </>

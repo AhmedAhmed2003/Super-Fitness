@@ -1,3 +1,4 @@
+import MarqueeSection from "@components/features/home/components/marquee-section.home";
 import FooterColumn from "./components/footer-column";
 import { footerData } from "./components/footer-data";
 import { useTranslation } from "react-i18next";
@@ -6,6 +7,9 @@ export default function Footer() {
     const { t } = useTranslation("Footer");
 
     return (
+        <>
+              {/* Marquee section - display marquee section */}
+                    <MarqueeSection />
         <footer className="bg-[#e2e3e3] text-[#242424] dark:bg-zinc-900 dark:text-zinc-200">
             <div className="max-w-7xl mx-auto px-6 py-14">
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
@@ -52,5 +56,6 @@ export default function Footer() {
                 </div>
             </div>
         </footer>
+        </>
     );
 }

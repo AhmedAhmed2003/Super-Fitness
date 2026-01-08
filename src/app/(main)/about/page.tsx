@@ -2,7 +2,7 @@ import AboutSection from "@components/features/home/components/about-section/abo
 
 export default function AboutPage() {
     return (
-        <div>
+        <div className="pt-8 bg-[#F9F9F9] dark:bg-[#242424F2]">
             <AboutSection />
         </div>
     );
