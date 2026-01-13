@@ -1,4 +1,3 @@
-import { Toaster } from "sonner";
 import img from "../../../public/images/auth-bg-image.png";
 import authImg from "../../../public/images/auth-img.png";
 import fit from "../../../public/images/fit-img.png";

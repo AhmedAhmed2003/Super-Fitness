@@ -10,12 +10,16 @@ import { useTranslation } from "react-i18next";
  * @returns {JSX.Element} The button group component for hero section actions.
  */
 export default function ButtonsGroup() {
-    const { t } = useTranslation("Home-Page", { keyPrefix: "Hero-Section.group-buttons" });
+    const { t } = useTranslation();
 
     return (
         <div className="flex flex-wrap items-center gap-6 lg:gap-16 mt-16">
-            <Button variant="secondary" className="capitalize w-full lg:w-fit">{t("get-started")}</Button>
-            <Button variant="secondary_outline" className="capitalize w-full lg:w-fit">{t("explore-more")}</Button>
+            <Button variant="secondary" className="capitalize w-full lg:w-fit">
+                {t("Home-Page.Hero-Section.group-buttons.get-started")}
+            </Button>
+            <Button variant="secondary_outline" className="capitalize w-full lg:w-fit">
+                {t("Home-Page.Hero-Section.group-buttons.explore-more")}
+            </Button>
         </div>
     );
 }

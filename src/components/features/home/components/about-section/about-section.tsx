@@ -7,8 +7,8 @@ import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
 export default function AboutSection() {
-    const { t } = useTranslation("Home-Page", { keyPrefix: "About-Section" });
-        const navigate = useNavigate();
+    const { t } = useTranslation();
+    const navigate = useNavigate();
 
     const handleClick = () => {
         navigate("/healthy");
@@ -56,38 +56,40 @@ export default function AboutSection() {
                     {/* Right Content */}
                     <div className="w-full lg:w-1/2">
                         {/* Logo Section */}
-                        <LogoSection title={t("subtitle")} subTitle={t("subtitle")} />
+                        <LogoSection title={t("Home-Page.About-Section.subtitle")} subTitle={t("Home-Page.About-Section.subtitle")} />
 
                         {/* Title */}
                         <h2 className="font-baloo w-[21.4rem] md:w-160 font-bold mt-4 md:mt-6 text-xl md:text-[2.5rem] dark:text-white leading-[120%] tracking-[0] uppercase">
-                            {t("title.start")}{" "}
+                            {t("Home-Page.About-Section.title.start")}{" "}
                             <span className="font-baloo font-bold text-xl md:text-[2.5rem] leading-[120%] tracking-[0] uppercase text-[#FF4100]">
-                                {t("title.middle")}
+                                {t("Home-Page.About-Section.title.middle")}
                             </span>{" "}
-                            {t("title.end")}
+                            {t("Home-Page.About-Section.title.end")}
                         </h2>
 
                         {/* Description */}
-                        <p className="mt-6 text-secondary font-normal text-lg dark:text-[#F3F3F4]">{t("description")}</p>
+                        <p className="mt-6 text-secondary font-normal text-lg dark:text-[#F3F3F4]">
+                            {t("Home-Page.About-Section.description")}
+                        </p>
 
                         {/* Features */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-14 mb-8">
                             {[
                                 {
-                                    title: t("features.personal.title"),
-                                    desc: t("features.personal.desc"),
+                                    title: t("Home-Page.About-Section.features.personal.title"),
+                                    desc: t("Home-Page.About-Section.features.personal.desc"),
                                 },
                                 {
-                                    title: t("features.cardio.title"),
-                                    desc: t("features.cardio.desc"),
+                                    title: t("Home-Page.About-Section.features.cardio.title"),
+                                    desc: t("Home-Page.About-Section.features.cardio.desc"),
                                 },
                                 {
-                                    title: t("features.equipment.title"),
-                                    desc: t("features.equipment.desc"),
+                                    title: t("Home-Page.About-Section.features.equipment.title"),
+                                    desc: t("Home-Page.About-Section.features.equipment.desc"),
                                 },
                                 {
-                                    title: t("features.nutrition.title"),
-                                    desc: t("features.nutrition.desc"),
+                                    title: t("Home-Page.About-Section.features.nutrition.title"),
+                                    desc: t("Home-Page.About-Section.features.nutrition.desc"),
                                 },
                             ].map((item, i) => (
                                 <div key={i} className="">
@@ -103,8 +105,8 @@ export default function AboutSection() {
                         </div>
 
                         {/* Button */}
-                        <Button variant="secondary" className="capitalize w-full lg:w-fit"  onClick={handleClick}>
-                            {t("btn")}
+                        <Button variant="secondary" className="capitalize w-full lg:w-fit" onClick={handleClick}>
+                            {t("Home-Page.About-Section.btn")}
                         </Button>
                     </div>
                 </div>

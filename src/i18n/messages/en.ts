@@ -1,39 +1,28 @@
 export const EN = {
     "Home-Page": {
-        // Hero section translations for the home page
         "Hero-Section": {
-            // Title used for the hero section main heading, split into three parts for styling emphasis
             "title": {
                 start: "Your body can",
                 middle: "stand almost",
                 end: "anything",
             },
-
-            // Description text for the hero section's motivational message
             "description":
                 "It's your mind that needs convincing. Push past your limits, stay committed, and watch as your body transform into powerhouse of strength and resilience. Start your journey today & truly capable of!",
-
-            // Analysis section key/value pairs for hero area statistics
             "analysis-section": {
                 "active-members": "active members",
                 "certified-trainers": "certified trainers",
                 "year-of-experience": "year of experience",
             },
-
-            // Button group labels in the hero section
             "group-buttons": {
                 "get-started": "get started",
                 "explore-more": "explore more",
             },
-
-            // Marquee section feature labels for scrolling highlights in the hero section
             "marquee-section": {
                 "personal-training": "personal trainers",
                 "live-classes": "live classes",
                 "personal-trainers": "personal trainers",
             },
         },
-
         "About-Section": {
             "subtitle": "About Us",
             "title.start": "empowering you to achieve",
@@ -52,7 +41,6 @@ export const EN = {
             "btn": "get started",
         },
     },
-
     "header": {
         home: "Home",
         about: "About",
@@ -92,6 +80,17 @@ export const EN = {
         seafood: "seafood",
         loader: "loading",
     },
+    "healthy-page": {
+        title: "Healthy",
+        subtitle: "Healthy Nutritions",
+        description: {
+            start: "Fuel your fitness journey with customized",
+            highlight: "Meal Plans",
+            end: "designed for you",
+        },
+        button: "Read More",
+        error: "Failed to load meals",
+    },
     "forget-pss": {
         successMessage: "A password reset link has been sent to your email.",
         errorMessage: "An error occurred while sending.",
@@ -99,10 +98,9 @@ export const EN = {
         emailPlaceholder: "Email",
         send: "Send OTP",
         sending: "Sending...",
-        title: "Forget Password"
+        title: "Forget Password",
     },
-    "ai": 
-    {
+    "ai": {
         name: "Smart Coach",
         place: "Ask Me Any Things..",
         hey: "Hey Ask Me",
@@ -110,7 +108,7 @@ export const EN = {
         msg2: "Can you please tell me how to gain 20kg weight?",
         workoutAtHome: "workout at home",
         dietPlan: "Diet Plan",
-        twentyMinutesWorkout: "20 minutes workout"
+        twentyMinutesWorkout: "20 minutes workout",
     },
     "classes-page": {
         title: "Transform Your Body with Our Dynamic",

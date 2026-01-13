@@ -11,7 +11,7 @@ import { useTranslation } from "react-i18next";
  * @returns {JSX.Element} A marquee section component
  */
 export default function MarqueeSection() {
-    const { t, i18n } = useTranslation("Home-Page", { keyPrefix: "Hero-Section.marquee-section" });
+    const { t, i18n } = useTranslation();
 
     return (
         <Marquee className="bg-primary h-24">
@@ -19,7 +19,7 @@ export default function MarqueeSection() {
                 {MARQUEE_LISTS.map((item, index) => (
                     <MarqueeItem className="text-2xl text-white font-bold uppercase flex gap-3.5" key={index}>
                         <img src="/vectors/star.png" alt="star-vector" width="26" height="26" aria-hidden="true" />
-                        {t(item)}
+                        {t(`Home-Page.Hero-Section.marquee-section.${item}`)}
                     </MarqueeItem>
                 ))}
             </MarqueeContent>

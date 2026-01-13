@@ -9,9 +9,9 @@ export default function MainLayout() {
         <main className="min-h-screen font-baloo">
             <Header />
             <Outlet />
-      <ChatWidget />
+            <ChatWidget />
 
-      <ChatToggleButton />
+            <ChatToggleButton />
 
             <Footer />
         </main>

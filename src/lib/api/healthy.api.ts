@@ -11,10 +11,12 @@ import axios from "axios";
 // Constants
 const MEAL_BASE_URL = "https://www.themealdb.com/api/json/v1/1";
 
-export async function fetchMealCategories(): Promise<MealCategoriesResponse> {
+export async function fetchMealCategories(language?: string): Promise<MealCategoriesResponse> {
     try {
         // Fetch meal categories
-        const { data } = await axios.get<MealCategoriesResponse>(`${MEAL_BASE_URL}/categories.php`);
+        const { data } = await axios.get<MealCategoriesResponse>(`${MEAL_BASE_URL}/categories.php`, {
+            headers: language ? { "Accept-Language": language } : {},
+        });
 
         return data;
     } catch (error: unknown) {
@@ -32,10 +34,12 @@ export async function fetchMealCategories(): Promise<MealCategoriesResponse> {
     }
 }
 
-export async function fetchSingleMeal({ id }: { id: string }): Promise<SingleMeal> {
+export async function fetchSingleMeal({ id, language }: { id: string; language?: string }): Promise<SingleMeal> {
     try {
         // Fetch meal categories
-        const { data } = await axios.get<SingleMeal>(`${MEAL_BASE_URL}/lookup.php?i=${id}`);
+        const { data } = await axios.get<SingleMeal>(`${MEAL_BASE_URL}/lookup.php?i=${id}`, {
+            headers: language ? { "Accept-Language": language } : {},
+        });
 
         return data;
     } catch (error: unknown) {
@@ -54,9 +58,11 @@ export async function fetchSingleMeal({ id }: { id: string }): Promise<SingleMea
     }
 }
 
-export async function fetchMealByCategory({ category }: { category: string }): Promise<MealByCategoryData> {
+export async function fetchMealByCategory({ category, language }: { category: string; language?: string }): Promise<MealByCategoryData> {
     try {
-        const { data } = await axios.get<MealByCategoryData>(`${MEAL_BASE_URL}/filter.php?c=${category}`);
+        const { data } = await axios.get<MealByCategoryData>(`${MEAL_BASE_URL}/filter.php?c=${category}`, {
+            headers: language ? { "Accept-Language": language } : {},
+        });
 
         return data;
     } catch (error: unknown) {

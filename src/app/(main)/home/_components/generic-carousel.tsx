@@ -23,22 +23,22 @@ interface GenericCarouselProps {
 const CarouselCard = memo(
     ({ item, buttonText, onItemClick }: { item: CarouselItem; buttonText: string; onItemClick: (item: CarouselItem) => void }) => (
         <div className="card-wrapper">
-            <Card className="gap-0 p-0 bg-[#FFFFFF]/50 dark:bg-[#242424]/50 backdrop-blur-[3.6rem] rounded-2xl border-none w-[21.4rem] md:w-100 overflow-hidden">
+            <Card className="gap-0 p-0 bg-[#FFFFFF]/50 dark:bg-secondary/50 backdrop-blur-[3.6rem] rounded-2xl border-none w-[21.4rem] md:w-400 overflow-hidden">
                 <img src={item.image} alt={item.name} loading="lazy" className="w-full h-74 object-cover rounded-t-2xl bg-[#F3F3F4]/60" />
 
                 <CardContent className="p-4 pb-2">
-                    <h3 className="mb-2 uppercase font-[Baloo_Thambi_2] font-bold text-[22.2px] leading-[33.6px] tracking-[2.24px] align-middle text-[#242424] dark:text-white">
+                    <h3 className="mb-2 uppercase font-[Baloo_Thambi_2] font-bold text-[22.2px] leading-[33.6px] tracking-[2.24px] align-middle text-secondary dark:text-white">
                         {item.name}
                     </h3>
 
                     <Button
                         variant="ghost"
                         onClick={() => onItemClick(item)}
-                        className="flex items-center justify-between text-[#FF4100] font-baloo font-medium text-[20px] leading-[18px] capitalize p-0 hover:bg-transparent cursor-pointer"
+                        className="flex items-center justify-between text-[#FF4100] font-baloo font-medium text-[20px] leading-4.5 capitalize p-0 hover:bg-transparent cursor-pointer"
                     >
                         <span>{buttonText}</span>
                         <div className="ml-2 rounded-full flex items-center justify-center bg-[#FF4100] p-2 transform -rotate-45">
-                            <ArrowRight size={14} className="text-[#242424]" />
+                            <ArrowRight size={14} className="text-secondary" />
                         </div>
                     </Button>
                 </CardContent>
@@ -62,7 +62,7 @@ const PaginationDots = memo(
                         onClick={() => onPageChange(i)}
                         aria-label={`Go to page ${i + 1}`}
                         className={`cursor-pointer transition-all duration-300 ease-in-out ${
-                            currentPage === i ? "bg-orange-500 w-8 h-2 rounded-2xl" : "bg-[#242424] dark:bg-[#F3F3F4] w-2 h-2 rounded-full"
+                            currentPage === i ? "bg-orange-500 w-8 h-2 rounded-2xl" : "bg-secondary dark:bg-[#F3F3F4] w-2 h-2 rounded-full"
                         }`}
                     />
                 ))}

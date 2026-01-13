@@ -33,10 +33,12 @@ function handleApiError(error: unknown, defaultMessage: string): never {
     } as ApiError;
 }
 
-export async function fetchMuscleGroups(): Promise<MusclesResponse> {
+export async function fetchMuscleGroups(language?: string): Promise<MusclesResponse> {
     try {
         // Fetch muscle groups
-        const { data } = await apiClient.get<MusclesResponse>("/muscles");
+        const { data } = await apiClient.get<MusclesResponse>("/muscles", {
+            headers: language ? { "Accept-Language": language } : {},
+        });
         return data;
     } catch (error) {
         // Handle error
@@ -44,10 +46,12 @@ export async function fetchMuscleGroups(): Promise<MusclesResponse> {
     }
 }
 
-export async function fetchMuscleGroupById(id: string): Promise<MuscleGroupDetailsResponse> {
+export async function fetchMuscleGroupById(id: string, language?: string): Promise<MuscleGroupDetailsResponse> {
     try {
         // Fetch muscle group
-        const { data } = await apiClient.get<MuscleGroupDetailsResponse>(`/musclesGroup/${id}`);
+        const { data } = await apiClient.get<MuscleGroupDetailsResponse>(`/musclesGroup/${id}`, {
+            headers: language ? { "Accept-Language": language } : {},
+        });
         return data;
     } catch (error) {
         // Handle error

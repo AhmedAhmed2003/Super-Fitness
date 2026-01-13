@@ -1,17 +1,14 @@
 import type { CarouselItem } from "@app/(main)/home/_components/generic-carousel";
-
 import { fetchMealByCategory, fetchMealCategories } from "@lib/api/healthy.api";
 import type { ApiError, MealByCategoryData, MealCategoriesResponse } from "@lib/types/features/healthy.types";
-
-
 import { useQuery } from "@tanstack/react-query";
 import { useMemo } from "react";
 
-export function useMealCategories() {
+export function useMealCategories(language?: string) {
     // Get meal categories
     const { data, isLoading, error } = useQuery<MealCategoriesResponse, ApiError>({
-        queryKey: ["mealCategories"],
-        queryFn: fetchMealCategories,
+        queryKey: ["mealCategories", language],
+        queryFn: () => fetchMealCategories(language),
         staleTime: Infinity,
         retry: 3,
         retryDelay: (attemptIndex) => Math.min(1000 * 2 ** attemptIndex, 30000),
@@ -37,16 +34,13 @@ export function useMealCategories() {
     };
 }
 
-export function useMealsByCategory(category?: string) {
-    const {
-        data,
-        isLoading,
-        error,
-    } =  useQuery<MealByCategoryData, ApiError>({
-        queryKey: ["mealsByCategory", category],
+export function useMealsByCategory(category?: string, language?: string) {
+    const { data, isLoading, error } = useQuery<MealByCategoryData, ApiError>({
+        queryKey: ["mealsByCategory", category, language],
         queryFn: () =>
             fetchMealByCategory({
                 category: category!,
+                language,
             }),
         enabled: !!category,
         retry: 2,

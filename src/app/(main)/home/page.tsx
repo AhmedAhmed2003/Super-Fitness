@@ -7,7 +7,7 @@ export default function HomePage() {
     return (
         <>
             <HeroSection />
-             {/*About Section*/}
+            {/*About Section*/}
             <AboutSection />
             {/*Workout Section*/}
             <WorkoutSection />

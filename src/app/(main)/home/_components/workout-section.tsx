@@ -6,11 +6,14 @@ import LogoSection from "@components/shared/logo-section";
 import { EmptyCardSkeleton } from "@components/skeletons/card.skeleton";
 import type { MusclesResponse, MuscleGroupDetailsResponse } from "@lib/types/features/workout.types";
 import { useState, useEffect, useMemo, useCallback } from "react";
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
 export default function WorkoutSection() {
-    // Fetch muscle groups
-    const { data: groupsData, isLoading: loadingGroups, error: groupsError } = useMuscleGroups();
+    const { t, i18n } = useTranslation();
+
+    // Fetch muscle groups with current language
+    const { data: groupsData, isLoading: loadingGroups, error: groupsError } = useMuscleGroups(i18n.language);
 
     // State
     const [selectedGroup, setSelectedGroup] = useState<string>("");
@@ -18,8 +21,8 @@ export default function WorkoutSection() {
     // Navigation
     const navigate = useNavigate();
 
-    // Fetch muscle group details
-    const { data: muscleGroupDetails, isLoading: detailsLoading, error: detailsError } = useMuscleGroup(selectedGroup);
+    // Fetch muscle group details with current language
+    const { data: muscleGroupDetails, isLoading: detailsLoading, error: detailsError } = useMuscleGroup(selectedGroup, i18n.language);
 
     // Memoize groups to prevent unnecessary re-renders
     const groups = useMemo(() => (groupsData as MusclesResponse)?.musclesGroup ?? [], [groupsData]);
@@ -46,9 +49,12 @@ export default function WorkoutSection() {
     }, [groups, selectedGroup]);
 
     // Memoize callback to prevent unnecessary re-renders
-    const handleMuscleClick = useCallback((item: CarouselItem) => {
-        navigate(`/workouts?groupId=${item?.id}`);
-    }, []);
+    const handleMuscleClick = useCallback(
+        (item: CarouselItem) => {
+            navigate(`/workouts?groupId=${item?.id}`);
+        },
+        [navigate],
+    );
 
     // Memoize error message
     const errorMessage = useMemo(() => groupsError?.message || detailsError?.message, [groupsError, detailsError]);
@@ -59,12 +65,12 @@ export default function WorkoutSection() {
             <div className="min-h-screen relative flex flex-col bg-[url('/images/workout-backgorund.jpg')] items-center bg-cover bg-center before:content-[''] before:absolute before:top-5 md:before:top-[3.56rem] before:w-full before:h-103.5 before:bg-[#F3F3F4]/60 dark:before:bg-[#242424]/60 before:backdrop-blur-md before:z-0 pb-10 px-4 pt-6 md:pt-1">
                 <div className="relative w-full flex flex-col md:items-center">
                     {/* Logo Section */}
-                    <LogoSection title="Workouts" subTitle="fitness class" />
+                    <LogoSection title={t("classes-page.workouts")} subTitle={t("classes-page.fitness")} />
                     {/* Title */}
                     <h2 className="font-baloo w-[21.4rem] md:w-160 font-bold mt-4 md:mt-6 text-xl md:text-[2.5rem] dark:text-white leading-[120%] tracking-[0] uppercase md:text-center">
-                        Transform Your Body with Our Dynamic{" "}
+                        {t("classes-page.title")}{" "}
                         <span className="font-baloo font-bold text-xl md:text-[2.5rem] leading-[120%] tracking-[0] uppercase text-center text-[#FF4100]">
-                            Upcoming Workouts
+                            {t("classes-page.subtitle")}
                         </span>
                     </h2>
                     <div className="mt-12 text-center">
@@ -80,12 +86,12 @@ export default function WorkoutSection() {
         <div className="min-h-screen relative flex flex-col bg-[url('/images/workout-backgorund.jpg')] items-center bg-cover bg-center before:content-[''] before:absolute before:top-5 md:before:top-[3.56rem] before:w-full before:h-103.5 before:bg-[#F3F3F4]/60 dark:before:bg-[#242424]/60 before:backdrop-blur-md before:z-0 pb-10 px-4 pt-6 md:pt-1">
             <div className="relative w-full flex flex-col md:items-center">
                 {/* Logo Section */}
-                <LogoSection title="Workouts" subTitle="fitness class" />
+                <LogoSection title={t("classes-page.workouts")} subTitle={t("classes-page.fitness")} />
                 {/* Title */}
                 <h2 className="font-baloo w-[21.4rem] md:w-160 font-bold mt-4 md:mt-6 text-xl md:text-[2.5rem] dark:text-white leading-[120%] tracking-[0] uppercase md:text-center">
-                    Transform Your Body with Our Dynamic{" "}
+                    {t("classes-page.title")}{" "}
                     <span className="font-baloo font-bold text-xl md:text-[2.5rem] leading-[120%] tracking-[0] uppercase text-center text-[#FF4100]">
-                        Upcoming Workouts
+                        {t("classes-page.subtitle")}
                     </span>
                 </h2>
 
@@ -109,7 +115,12 @@ export default function WorkoutSection() {
                     ) : (
                         <div className="mt-8">
                             {/* Muscle Details */}
-                            <GenericCarousel items={muscleItems} pageSize={3} buttonText="Explore" onItemClick={handleMuscleClick} />
+                            <GenericCarousel
+                                items={muscleItems}
+                                pageSize={3}
+                                buttonText={t("classes-page.explore")}
+                                onItemClick={handleMuscleClick}
+                            />
                         </div>
                     )}
                 </div>

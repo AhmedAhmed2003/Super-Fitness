@@ -11,7 +11,6 @@ export const transOptions = {
             translation: AR,
         },
     },
-
     lng: savedLang,
     fallbackLng: "en",
     interpolation: { escapeValue: false },

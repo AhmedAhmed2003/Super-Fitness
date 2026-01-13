@@ -6,13 +6,10 @@ import PageLoader from "@components/shared/loader";
 import LogoSection from "@components/shared/logo-section";
 import Title from "@components/shared/title";
 import { EmptyCardSkeleton } from "@components/skeletons/card.skeleton";
-import { AspectRatio } from "@components/ui/aspect-ratio";
 import { Button } from "@components/ui/button";
-import { Card, CardContent, CardFooter } from "@components/ui/card";
-import { MoveUpRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Link, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 
 export default function ClassesPage() {
     // Translation

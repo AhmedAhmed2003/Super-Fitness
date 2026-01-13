@@ -91,6 +91,17 @@ export const AR = {
         seafood: "المأكولات البحرية",
         loader: "جاري التحميل",
     },
+    "healthy-page": {
+        title: "الصحة",
+        subtitle: "تغذية صحية",
+        description: {
+            start: "زود رحلتك في اللياقة مع",
+            highlight: "خطط وجبات",
+            end: "مخصصة مصممة لك",
+        },
+        button: "اقرأ المزيد",
+        error: "فشل تحميل الوجبات",
+    },
     "forget-pss": {
         successMessage: "تم إرسال رابط إعادة تعيين كلمة المرور إلى بريدك الإلكتروني.",
         errorMessage: "حدث خطأ أثناء الإرسال.",
@@ -102,13 +113,13 @@ export const AR = {
     },
     "ai": {
         name: "المدرب الذكي",
-        place: "اسآلني آي سوال..",
-        hey: "هاي اسآلني",
+        place: "اسألني أي سؤال..",
+        hey: "هاي اسألني",
         msg1: "مرحبًا، كيف يمكنني مساعدتك اليوم؟",
         msg2: "هل يمكنك من فضلك أن تخبرني كيف أزيد وزني 20 كيلوجرامًا؟",
         workoutAtHome: "تمرين في المنزل",
         dietPlan: "نظام غذائي",
-        twentyMinutesWorkout: "تمرين لمدة 20 دقيقة"
+        twentyMinutesWorkout: "تمرين لمدة 20 دقيقة",
     },
     "classes-page": {
         title: "غيّر جسمك مع تماريننا",

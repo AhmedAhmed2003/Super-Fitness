@@ -14,7 +14,10 @@ import { useTranslation } from "react-i18next";
  * @returns {JSX.Element} The hero section of the landing page.
  */
 export default function HeroSection() {
-    const { t, i18n } = useTranslation("Home-Page", { keyPrefix: "Hero-Section" });
+    const { t, i18n } = useTranslation();
+
+    // Helper function عشان الكود يبقى أقصر
+    const heroT = (key: string) => t(`Home-Page.Hero-Section.${key}`);
 
     return (
         <header
@@ -28,10 +31,10 @@ export default function HeroSection() {
                     {/* left side - info */}
                     <div className="w-full lg:w-1/2">
                         <h1 className="text-4xl/snug md:text-5xl/snug font-bold uppercase">
-                            {t("title.start")} <span className="text-[#FF4100]">{t("title.middle")}</span> {t("title.end")}{" "}
+                            {heroT("title.start")} <span className="text-[#FF4100]">{heroT("title.middle")}</span> {heroT("title.end")}{" "}
                         </h1>
                         <p className="mt-6 text-lg flex before:w-2 before:rounded-2xl before:me-4 before:bg-[#FF4100] before:content-[''] me-4">
-                            {t("description")}
+                            {heroT("description")}
                         </p>
 
                         {/* Analysis section - display analysis section */}
