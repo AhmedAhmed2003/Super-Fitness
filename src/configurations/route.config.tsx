@@ -14,7 +14,7 @@ import AuthLayout from "@app/auth/layout";
 import LoginPage from "@app/auth/login/page";
 // Auth Pages
 import RegisterPage from "@app/auth/register/page";
-import VerifyOtpPage from "@app/auth/verify-otp/page";
+import VerifyOtpPage from "@app/auth/forget-password/_components/verify-otp-step/page";
 import NotFound from "@components/shared/not-found";
 import { createBrowserRouter } from "react-router-dom";
 

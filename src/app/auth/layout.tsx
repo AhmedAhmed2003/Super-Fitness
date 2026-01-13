@@ -2,6 +2,9 @@ import { Toaster } from "sonner";
 import img from "../../../public/images/auth-bg-image.png";
 import authImg from "../../../public/images/auth-img.png";
 import fit from "../../../public/images/fit-img.png";
+import ButtonLangToggle from "@components/shared/button-lang-toggle.shared";
+import { ButtonModeToggle } from "@components/shared/button-mode-toggle.shared";
+import { Toaster } from "@components/ui/sonner";
 import { Outlet } from "react-router-dom";
 
 export default function AuthLayout() {
@@ -17,16 +20,20 @@ export default function AuthLayout() {
             <div className="relative h-full flex flex-col md:flex-row z-20">
                 {/* Left Section: Images */}
                 <div className="border-b md:border-b-0 md:border-e border-2 border-[#FF410033] w-full md:w-1/2 flex items-center justify-center p-4">
-                    <div className="flex flex-col items-center w-full max-w-[650px]">
+                    <div className="flex flex-col items-center w-full max-w-162.5">
                         <img src={fit} alt="Fitness" className="w-36 sm:w-48 md:w-60 h-auto " loading="lazy" />
-                        <img src={authImg} alt="Authentication-cover" className="w-full h-auto max-w-[628px]" loading="lazy" />
+                        <img src={authImg} alt="Authentication-cover" className="w-full h-auto max-w-157" loading="lazy" />
                     </div>
                 </div>
 
                 {/* Right Section: Forms / Children */}
                 <div className="w-full md:w-1/2 flex items-center justify-center p-4">
-                    <div className="w-full max-w-md">
+                    <div className="w-full flex justify-center items-center">
+                        {/* Children */}
                         <Outlet />
+                        {/* Toggles & Toaster */}
+                        <ButtonLangToggle />
+                        <ButtonModeToggle />
                         <Toaster />
                     </div>
                 </div>

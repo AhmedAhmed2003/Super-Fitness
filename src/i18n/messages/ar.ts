@@ -117,4 +117,46 @@ export const AR = {
         workouts: "تمارين",
         fitness: "درس لياقة بدنية",
     },
+    "Login-Page": {
+        "title.hey": "أهلاً بك،",
+        "title.welcome": "مرحباً بعودتك!",
+        "form": {
+            "login-title": "تسجيل الدخول",
+            "email-placeholder": "البريد الإلكتروني",
+            "password-placeholder": "كلمة المرور",
+            "forget-password": "نسيت كلمة المرور؟",
+            "login-button": "تسجيل الدخول",
+            "logging-in": "جاري تسجيل الدخول...",
+            "no-account": "ليس لديك حساب بعد؟",
+            "register": "سجل الآن",
+        },
+        "messages": {
+            "login-success": "تم تسجيل الدخول بنجاح",
+            "login-failed": "فشل تسجيل الدخول",
+        },
+        "header": {
+            "Hey There,": "أهلاً بك،",
+            "WELCOME BACK!": "مرحباً بعودتك!",
+        },
+    },
+    "VerifyOtp-Page": {
+        header: {
+            "otp-code": "كود التحقق",
+        },
+    },
+    "Otp-Page": {
+        header: {
+            "otp-code": "كود التحقق",
+        },
+        form: {
+            "enter-otp": "أدخل رمز التحقق الذي استلمته",
+            "confirm": "تأكيد",
+            "verifying": "جارٍ التحقق...",
+            "didnt-receive": "لم تستلم رمز التحقق؟",
+            "resend-code": "إعادة إرسال الرمز",
+        },
+        messages: {
+            "otp-error": "هناك خطأ في التحقق. حاول مرة أخرى.",
+        },
+    },
 };

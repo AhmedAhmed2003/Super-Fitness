@@ -119,4 +119,46 @@ export const EN = {
         workouts: "Workouts",
         fitness: "Fitness Class",
     },
+    "Login-Page": {
+        "title.hey": "Hey There,",
+        "title.welcome": "WELCOME BACK!",
+        "form": {
+            "login-title": "Login",
+            "email-placeholder": "Email",
+            "password-placeholder": "Password",
+            "forget-password": "Forget Password?",
+            "login-button": "Login",
+            "logging-in": "Logging in...",
+            "no-account": "Don't Have An Account Yet?",
+            "register": "Register",
+        },
+        "messages": {
+            "login-success": "Login successful",
+            "login-failed": "Login Failed",
+        },
+        "header": {
+            "Hey There,": "Hey There,",
+            "WELCOME BACK!": "WELCOME BACK!",
+        },
+    },
+    "VerifyOtp-Page": {
+        header: {
+            "otp-code": "OTP CODE",
+        },
+    },
+    "Otp-Page": {
+        header: {
+            "otp-code": "OTP CODE",
+        },
+        form: {
+            "enter-otp": "Enter the OTP you have received",
+            "confirm": "Confirm",
+            "verifying": "Verifying...",
+            "didnt-receive": "Didn't Receive Verification Code?",
+            "resend-code": "Resend Code",
+        },
+        messages: {
+            "otp-error": "There was an error verifying your code. Please try again.",
+        },
+    },
 };

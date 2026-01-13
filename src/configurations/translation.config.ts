@@ -1,12 +1,15 @@
 import { AR, EN } from "@i18n/messages";
 
-const savedLang = localStorage.getItem("lang") || "ar";
-console.log(savedLang);
+const savedLang = localStorage.getItem("lang") || "en";
 
 export const transOptions = {
     resources: {
-        en: EN,
-        ar: AR,
+        en: {
+            translation: EN,
+        },
+        ar: {
+            translation: AR,
+        },
     },
 
     lng: savedLang,
